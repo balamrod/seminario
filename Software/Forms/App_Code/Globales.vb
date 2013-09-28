@@ -1,0 +1,7 @@
+﻿Imports Microsoft.VisualBasic
+Imports Query
+
+
+Public Class Globales
+    Public Shared cadenaConexion As String = "server= MYSQL5002.Smarterasp.net ;user id=9ab641_test1;password=seminario;database = db_9ab641_test1;Pooling=false;Connection Lifetime=1; Max Pool Size=1"
+End Class
