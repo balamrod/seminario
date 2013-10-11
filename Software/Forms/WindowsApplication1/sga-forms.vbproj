@@ -46,6 +46,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 6.7.4\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 6.7.4\Assemblies\v4.5\MySql.Data.Entity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -76,6 +84,12 @@
     <Compile Include="Asignacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\Conexion.vb" />
+    <Compile Include="Clases\General.vb" />
+    <Compile Include="Clases\Globales.vb" />
+    <Compile Include="Clases\Maestros.vb" />
+    <Compile Include="Clases\Query.vb" />
+    <Compile Include="Clases\Variables.vb" />
     <Compile Include="Inscripcion.Designer.vb">
       <DependentUpon>Inscripcion.vb</DependentUpon>
     </Compile>
