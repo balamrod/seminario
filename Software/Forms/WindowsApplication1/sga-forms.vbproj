@@ -78,22 +78,27 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Asignacion.Designer.vb">
-      <DependentUpon>Asignacion.vb</DependentUpon>
+    <Compile Include="Clases\clsConexion.vb" />
+    <Compile Include="Clases\clsHelper.vb" />
+    <Compile Include="Clases\clsABC.vb" />
+    <Compile Include="Clases\clsHelperSQL.vb" />
+    <Compile Include="MstAsignacion.Designer.vb">
+      <DependentUpon>MstAsignacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Asignacion.vb">
+    <Compile Include="MstAsignacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clases\Conexion.vb" />
-    <Compile Include="Clases\General.vb" />
-    <Compile Include="Clases\Globales.vb" />
-    <Compile Include="Clases\Maestros.vb" />
-    <Compile Include="Clases\Query.vb" />
-    <Compile Include="Clases\Variables.vb" />
-    <Compile Include="Inscripcion.Designer.vb">
-      <DependentUpon>Inscripcion.vb</DependentUpon>
+    <Compile Include="TrsAsignacion.Designer.vb">
+      <DependentUpon>TrsAsignacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inscripcion.vb">
+    <Compile Include="TrsAsignacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clases\clsGlobales.vb" />
+    <Compile Include="TrsInscripcion.Designer.vb">
+      <DependentUpon>TrsInscripcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TrsInscripcion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login.Designer.vb">
@@ -138,11 +143,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Asignacion.resx">
-      <DependentUpon>Asignacion.vb</DependentUpon>
+    <EmbeddedResource Include="MstAsignacion.resx">
+      <DependentUpon>MstAsignacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inscripcion.resx">
-      <DependentUpon>Inscripcion.vb</DependentUpon>
+    <EmbeddedResource Include="TrsAsignacion.resx">
+      <DependentUpon>TrsAsignacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrsInscripcion.resx">
+      <DependentUpon>TrsInscripcion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>

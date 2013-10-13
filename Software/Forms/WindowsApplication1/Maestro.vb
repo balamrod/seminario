@@ -3,7 +3,7 @@
 Public Class Maestro
 
     Private Sub NuevaInscripciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaInscripciónToolStripMenuItem.Click
-        Dim ChildForm As New Inscripcion
+        Dim ChildForm As New TrsInscripcion
         ChildForm.WindowState = FormWindowState.Maximized
         ChildForm.MdiParent = Me
         ChildForm.Show()
@@ -24,7 +24,7 @@ Public Class Maestro
     End Sub
 
     Private Sub AsignaciónAlumnoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsignaciónAlumnoToolStripMenuItem.Click
-        Dim ChildForm As New Asignacion
+        Dim ChildForm As New TrsAsignacion
         ChildForm.WindowState = FormWindowState.Maximized
         ChildForm.MdiParent = Me
         ChildForm.Show()

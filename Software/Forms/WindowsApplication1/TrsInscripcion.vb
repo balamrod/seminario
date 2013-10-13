@@ -1,4 +1,4 @@
-﻿Public Class Inscripcion
+﻿Public Class TrsInscripcion
 
     Private Sub Inscripcion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
