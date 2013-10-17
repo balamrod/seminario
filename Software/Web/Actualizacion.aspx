@@ -9,32 +9,49 @@
             <asp:Panel ID="Panel1" runat="server">
             </asp:Panel>
             <div >
+                <table border="" bordercolor="1" style="background-color:" width="100%" cellpadding="" cellspacing="">
+	<tr>
+		<td class="auto-style1">
+
+
+
                 <asp:Label ID="Label1" runat="server" Text="Correo Personal:"></asp:Label>
 
-                <asp:TextBox ID="txtCorreo" runat="server" Width="59%" MaxLength="100" Height="16px"></asp:TextBox>
+                </td>
+		<td class="auto-style2">
 
-                &nbsp;<asp:Label ID="Label3" runat="server" Text="Celular:"></asp:Label>
+                <asp:TextBox ID="txtCorreo" runat="server" Width="95%" MaxLength="100" Height="16px"></asp:TextBox>
 
-                &nbsp;&nbsp;
+                </td>
+		<td class="auto-style3"><asp:Label ID="Label3" runat="server" Text="Celular:"></asp:Label>
 
-                <asp:TextBox ID="txtCelular" runat="server" Width="21%" MaxLength="100" Height="16px"></asp:TextBox>
+                </td>
+		<td class="auto-style4">
 
-                <br />
+                <asp:TextBox ID="txtCelular" runat="server" Width="95%" MaxLength="100" Height="16px"></asp:TextBox>
+
+                </td>
+	</tr>
+	<tr>
+		<td class="auto-style1">
                 <asp:Label ID="Label2" runat="server" Text="Domicilio:"></asp:Label>
 
-                <asp:TextBox ID="txtDomicilio" runat="server" Width="50%"></asp:TextBox>            
-                &nbsp;
+                </td>
+		<td class="auto-style2">
+
+                <asp:TextBox ID="txtDomicilio" runat="server" Width="95%"></asp:TextBox>            
+                </td>
+		<td class="auto-style3">
                 <asp:Label ID="Label4" runat="server" Text="Teléfono:"></asp:Label>
 
-                &nbsp;&nbsp;
+                </td>
+		<td class="auto-style4">
 
-                <asp:TextBox ID="txtTelefono" runat="server" Width="21%" MaxLength="100" Height="16px"></asp:TextBox>
+                <asp:TextBox ID="txtTelefono" runat="server" Width="95%" MaxLength="100" Height="16px"></asp:TextBox>
 
-                <br />
-                <br />
-              <br />
-                <br />
-                &nbsp;            
+                </td>
+	</tr>
+</table>
                 <asp:ImageButton ID="btnGuardar" runat="server" Height="35px" ImageAlign="Right" ImageUrl="~/Images/save.png" Width="40px" ToolTip="Guardar" Visible="False" />
                 <asp:ImageButton ID="btnModificar" runat="server" Height="35px" ImageAlign="Right" ImageUrl="~/Images/editar2.png" Width="40px" Visible="False" ToolTip="Modfiicar" />
                 <br />
@@ -60,3 +77,24 @@
         </li>
     </ol>
 </asp:Content>
+<asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
+    <style type="text/css">
+        .auto-style1
+        {
+            width: 104px;
+        }
+        .auto-style2
+        {
+            width: 780px;
+        }
+        .auto-style3
+        {
+            width: 69px;
+        }
+        .auto-style4
+        {
+            width: 422px;
+        }
+    </style>
+</asp:Content>
+
