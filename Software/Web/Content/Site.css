@@ -6,7 +6,7 @@
 
 body {
     background-color: #fff;
-    border-top: solid 10px #000;
+    
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
@@ -31,10 +31,11 @@ a {
         background-color: #c7d1d6;
     }
 
-header, footer, hgroup,
+header, footer,
 nav, section {
     display: block;
 	margin-bottom: 0px;
+	background-color:rgba(28, 46, 68, 0.88);
 }
 
 mark {
@@ -45,10 +46,13 @@ mark {
 
 .float-left {
     float: left;
+	color:white;
 }
 
 .float-right {
     float: right;
+	position: relative;
+top: 35px;
 }
 
 .clear-fix:after {
@@ -120,7 +124,7 @@ header .content-wrapper {
     
 footer {
     clear: both;
-    background-color: #e2e2e2;
+   
     font-size: .8em;
     height: 100px;
 }
@@ -133,6 +137,7 @@ footer {
     font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
     font-size: 2.3em;
     margin: 0;
+	top: 100px;
 }
 
 .site-title a, .site-title a:hover, .site-title a:active {
@@ -150,6 +155,7 @@ footer {
     font-size: .85em;
     margin: 0 0 10px;
     text-align: right;
+	color:white;
 }
 
     #login a {
@@ -168,6 +174,7 @@ footer {
 
     #login ul {
         margin: 0;
+		background-color:rgba(62, 71, 83, 0.88);
     }
 
     #login li {
@@ -179,28 +186,32 @@ footer {
 /* menu
 ----------------------------------------------------------*/
 ul#menu {
-    font-size: 1.3em;
+    font-size: 1.0em;
     font-weight: 600;
-    margin: 0 0 5px;
+    margin: 0 0 0px;
     padding: 0;
+	background-color:rgba(20, 40, 66, 0.88);
     text-align: right;
+	 
 }
 
     ul#menu li {
         display: inline;
         list-style: none;
-        padding-left: 15px;
+        padding-left: 15px;		
+
     }
 
         ul#menu li a {
-            background: none;
-            color: #999;
+          
+            color: white;
             text-decoration: none;
         }
 
         ul#menu li a:hover {
             color: #333;
             text-decoration: none;
+			
         }
 
 
@@ -212,7 +223,7 @@ ul#menu {
 }
 
     .featured .content-wrapper {
-        background-color: #7ac0da;
+        background-color: #7ac0da ;
         background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
@@ -408,8 +419,7 @@ fieldset {
         font-size: 1.2em;
         margin: 5px 0 6px 0;
         padding: 5px;
-        width: 300px;
-    }
+        }
 
     textarea {
         font-family: inherit;
@@ -640,6 +650,7 @@ tr.pager td {
     .content-wrapper {
         padding-right: 10px;
         padding-left: 10px;
+		background-color: rgba(42, 84, 138, 0.88);
     }
 
     .featured .content-wrapper {

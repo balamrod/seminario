@@ -7,7 +7,6 @@ Public Class MstCarrera
 
 #Region "variables"
     Dim VectorTxt(5) As TextBox
-    Dim sCadenaConexion As String = cadenaConexion
     Dim sActualizarGrid As String = "select id_carrera as 'código', c.nombre, descripcion, s.nombre as sucursal , c.acuerdo, c.fecha_acuerdo as 'fecha acuerdo', sucursal_id_sucursal from carrera c inner join sucursal s on c.sucursal_id_sucursal = s.id_sucursal order by sucursal, c.nombre"
 
     Dim iId As String

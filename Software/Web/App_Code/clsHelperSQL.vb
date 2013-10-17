@@ -1,16 +1,29 @@
-﻿Imports Bitacora
-Imports System.Data
+﻿Imports System.Data
 
 Public Class Maestros
     Public tusuario As String
 
 #Region "Funciones"
+    ''' <summary>
+    '''  Realiza el insert, update, delete
+    ''' </summary> 
+    Public Shared Function BuildQuery(ByVal sTabala As String, ByVal sCampos As String, ByVal sCondicion As String, ByVal sOrderBy As String, ByVal sTypeOrder As String, ByVal sCadenaConexion As String) As DataSet
+        Dim sSQL As String
+        sSQL = "SELECT " & sCampos
+        sSQL += " FROM " & sTabala
+        If (sCondicion <> "") Then
+            sSQL += " WHERE " & sCondicion
+        End If
+        If (sOrderBy <> "") Then
+            sSQL += " ORDER BY " & sOrderBy & " " & sTypeOrder
+        End If
+        Return Query.ExecuteQuery(sSQL, sCadenaConexion)
+    End Function
 
     Public Shared Function BuildProcedure(ByVal iTipo As Integer, ByVal sTabla As String, ByVal sCampos As String, ByVal sValues As String, ByVal sCondicion As String, ByVal sCadenaConexion As String, ByVal parent As Control) As String
         Dim sSQL As String
         Dim script As String
         Dim sError As String
-
 
         If (iTipo = 1) Then
             sSQL = "INSERT INTO " & sTabla & "(" & sCampos & ") VALUES (" & sValues & ")"

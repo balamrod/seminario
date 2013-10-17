@@ -1,8 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports System.Windows.Forms
 Imports Conexion
 Imports System.Data
-Imports Bitacora
 Imports General
 Imports Globales
 
@@ -50,7 +48,7 @@ Public Class Query
         Return sError
     End Function
 
-    
+   
 #End Region
 
 #Region "Transacciones"
