@@ -23,7 +23,7 @@ Partial Class mstCatedras
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mstCatedras))
-        Me.dgvSalon = New System.Windows.Forms.DataGridView()
+        Me.dgvCatedras = New System.Windows.Forms.DataGridView()
         Me.gbIngresoDatos = New System.Windows.Forms.GroupBox()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -35,20 +35,20 @@ Partial Class mstCatedras
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.dgvSalon, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dgvSalon
+        'dgvCatedras
         '
-        Me.dgvSalon.AllowUserToAddRows = False
-        Me.dgvSalon.AllowUserToDeleteRows = False
-        Me.dgvSalon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSalon.Location = New System.Drawing.Point(26, 196)
-        Me.dgvSalon.Name = "dgvSalon"
-        Me.dgvSalon.ReadOnly = True
-        Me.dgvSalon.Size = New System.Drawing.Size(529, 184)
-        Me.dgvSalon.TabIndex = 16
+        Me.dgvCatedras.AllowUserToAddRows = False
+        Me.dgvCatedras.AllowUserToDeleteRows = False
+        Me.dgvCatedras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCatedras.Location = New System.Drawing.Point(26, 196)
+        Me.dgvCatedras.Name = "dgvCatedras"
+        Me.dgvCatedras.ReadOnly = True
+        Me.dgvCatedras.Size = New System.Drawing.Size(529, 184)
+        Me.dgvCatedras.TabIndex = 16
         '
         'gbIngresoDatos
         '
@@ -167,18 +167,18 @@ Partial Class mstCatedras
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(578, 410)
-        Me.Controls.Add(Me.dgvSalon)
+        Me.Controls.Add(Me.dgvCatedras)
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mstCatedras"
         Me.Text = "Catedras"
-        CType(Me.dgvSalon, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
         Me.gbIngresoDatos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents dgvSalon As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvCatedras As System.Windows.Forms.DataGridView
     Friend WithEvents gbIngresoDatos As System.Windows.Forms.GroupBox
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button

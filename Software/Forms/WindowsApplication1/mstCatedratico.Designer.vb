@@ -23,8 +23,22 @@ Partial Class mstCatedratico
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mstCatedratico))
-        Me.dgvSalon = New System.Windows.Forms.DataGridView()
+        Me.dgvEmpleado = New System.Windows.Forms.DataGridView()
         Me.gbIngresoDatos = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TextCorreo = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextCedula = New System.Windows.Forms.TextBox()
+        Me.TextApellido = New System.Windows.Forms.TextBox()
+        Me.TextNombre = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextDireccion = New System.Windows.Forms.TextBox()
+        Me.TextTelefono = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextCelular = New System.Windows.Forms.TextBox()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
@@ -35,37 +49,27 @@ Partial Class mstCatedratico
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextCelular = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextTelefono = New System.Windows.Forms.TextBox()
-        Me.TextDireccion = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextNombre = New System.Windows.Forms.TextBox()
-        Me.TextApellido = New System.Windows.Forms.TextBox()
-        Me.TextCedula = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextCorreo = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        CType(Me.dgvSalon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        CType(Me.dgvEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dgvSalon
+        'dgvEmpleado
         '
-        Me.dgvSalon.AllowUserToAddRows = False
-        Me.dgvSalon.AllowUserToDeleteRows = False
-        Me.dgvSalon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSalon.Location = New System.Drawing.Point(23, 261)
-        Me.dgvSalon.Name = "dgvSalon"
-        Me.dgvSalon.ReadOnly = True
-        Me.dgvSalon.Size = New System.Drawing.Size(529, 184)
-        Me.dgvSalon.TabIndex = 14
+        Me.dgvEmpleado.AllowUserToAddRows = False
+        Me.dgvEmpleado.AllowUserToDeleteRows = False
+        Me.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEmpleado.Location = New System.Drawing.Point(23, 299)
+        Me.dgvEmpleado.Name = "dgvEmpleado"
+        Me.dgvEmpleado.ReadOnly = True
+        Me.dgvEmpleado.Size = New System.Drawing.Size(529, 184)
+        Me.dgvEmpleado.TabIndex = 14
         '
         'gbIngresoDatos
         '
+        Me.gbIngresoDatos.Controls.Add(Me.ComboBox1)
+        Me.gbIngresoDatos.Controls.Add(Me.Label10)
         Me.gbIngresoDatos.Controls.Add(Me.Label11)
         Me.gbIngresoDatos.Controls.Add(Me.TextCorreo)
         Me.gbIngresoDatos.Controls.Add(Me.Label9)
@@ -92,10 +96,129 @@ Partial Class mstCatedratico
         Me.gbIngresoDatos.Controls.Add(Me.Label1)
         Me.gbIngresoDatos.Location = New System.Drawing.Point(23, 28)
         Me.gbIngresoDatos.Name = "gbIngresoDatos"
-        Me.gbIngresoDatos.Size = New System.Drawing.Size(529, 209)
+        Me.gbIngresoDatos.Size = New System.Drawing.Size(529, 251)
         Me.gbIngresoDatos.TabIndex = 13
         Me.gbIngresoDatos.TabStop = False
         Me.gbIngresoDatos.Text = "Ingreso de datos"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(280, 174)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(38, 13)
+        Me.Label11.TabIndex = 25
+        Me.Label11.Text = "Correo"
+        '
+        'TextCorreo
+        '
+        Me.TextCorreo.Location = New System.Drawing.Point(356, 168)
+        Me.TextCorreo.Name = "TextCorreo"
+        Me.TextCorreo.Size = New System.Drawing.Size(158, 20)
+        Me.TextCorreo.TabIndex = 24
+        Me.TextCorreo.Tag = "correo"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(21, 175)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(60, 13)
+        Me.Label9.TabIndex = 21
+        Me.Label9.Text = "No. Cedula"
+        '
+        'TextCedula
+        '
+        Me.TextCedula.Location = New System.Drawing.Point(108, 168)
+        Me.TextCedula.Name = "TextCedula"
+        Me.TextCedula.Size = New System.Drawing.Size(100, 20)
+        Me.TextCedula.TabIndex = 20
+        Me.TextCedula.Tag = "no_cedula"
+        '
+        'TextApellido
+        '
+        Me.TextApellido.Location = New System.Drawing.Point(339, 144)
+        Me.TextApellido.Name = "TextApellido"
+        Me.TextApellido.Size = New System.Drawing.Size(175, 20)
+        Me.TextApellido.TabIndex = 19
+        Me.TextApellido.Tag = "apellidos"
+        '
+        'TextNombre
+        '
+        Me.TextNombre.Location = New System.Drawing.Point(108, 142)
+        Me.TextNombre.Name = "TextNombre"
+        Me.TextNombre.Size = New System.Drawing.Size(158, 20)
+        Me.TextNombre.TabIndex = 18
+        Me.TextNombre.Tag = "nombres"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(280, 147)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(44, 13)
+        Me.Label8.TabIndex = 17
+        Me.Label8.Text = "Apellido"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(21, 147)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(44, 13)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Nombre"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(21, 119)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "Direccion"
+        '
+        'TextDireccion
+        '
+        Me.TextDireccion.Location = New System.Drawing.Point(108, 116)
+        Me.TextDireccion.Name = "TextDireccion"
+        Me.TextDireccion.Size = New System.Drawing.Size(406, 20)
+        Me.TextDireccion.TabIndex = 14
+        Me.TextDireccion.Tag = "direccion"
+        '
+        'TextTelefono
+        '
+        Me.TextTelefono.Location = New System.Drawing.Point(414, 87)
+        Me.TextTelefono.Name = "TextTelefono"
+        Me.TextTelefono.Size = New System.Drawing.Size(100, 20)
+        Me.TextTelefono.TabIndex = 13
+        Me.TextTelefono.Tag = "telefono_casa"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(353, 93)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Telefono"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(196, 93)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Celular"
+        '
+        'TextCelular
+        '
+        Me.TextCelular.Location = New System.Drawing.Point(252, 86)
+        Me.TextCelular.Name = "TextCelular"
+        Me.TextCelular.Size = New System.Drawing.Size(95, 20)
+        Me.TextCelular.TabIndex = 10
+        Me.TextCelular.Tag = "celular"
         '
         'btnModificar
         '
@@ -190,142 +313,40 @@ Partial Class mstCatedratico
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Fecha Egreso:"
         '
-        'TextCelular
+        'Label10
         '
-        Me.TextCelular.Location = New System.Drawing.Point(252, 86)
-        Me.TextCelular.Name = "TextCelular"
-        Me.TextCelular.Size = New System.Drawing.Size(95, 20)
-        Me.TextCelular.TabIndex = 10
-        Me.TextCelular.Tag = "celular"
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(21, 205)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(81, 13)
+        Me.Label10.TabIndex = 26
+        Me.Label10.Text = "Tipo Empleado:"
         '
-        'Label3
+        'ComboBox1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(196, 93)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Celular"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(353, 93)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Telefono"
-        '
-        'TextTelefono
-        '
-        Me.TextTelefono.Location = New System.Drawing.Point(414, 87)
-        Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(100, 20)
-        Me.TextTelefono.TabIndex = 13
-        Me.TextTelefono.Tag = "telefono_casa"
-        '
-        'TextDireccion
-        '
-        Me.TextDireccion.Location = New System.Drawing.Point(108, 116)
-        Me.TextDireccion.Name = "TextDireccion"
-        Me.TextDireccion.Size = New System.Drawing.Size(406, 20)
-        Me.TextDireccion.TabIndex = 14
-        Me.TextDireccion.Tag = "direccion"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(21, 119)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 13)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "Direccion"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(24, 147)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(44, 13)
-        Me.Label7.TabIndex = 16
-        Me.Label7.Text = "Nombre"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(280, 147)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(44, 13)
-        Me.Label8.TabIndex = 17
-        Me.Label8.Text = "Apellido"
-        '
-        'TextNombre
-        '
-        Me.TextNombre.Location = New System.Drawing.Point(108, 142)
-        Me.TextNombre.Name = "TextNombre"
-        Me.TextNombre.Size = New System.Drawing.Size(158, 20)
-        Me.TextNombre.TabIndex = 18
-        Me.TextNombre.Tag = "nombres"
-        '
-        'TextApellido
-        '
-        Me.TextApellido.Location = New System.Drawing.Point(339, 144)
-        Me.TextApellido.Name = "TextApellido"
-        Me.TextApellido.Size = New System.Drawing.Size(175, 20)
-        Me.TextApellido.TabIndex = 19
-        Me.TextApellido.Tag = "apellidos"
-        '
-        'TextCedula
-        '
-        Me.TextCedula.Location = New System.Drawing.Point(108, 168)
-        Me.TextCedula.Name = "TextCedula"
-        Me.TextCedula.Size = New System.Drawing.Size(100, 20)
-        Me.TextCedula.TabIndex = 20
-        Me.TextCedula.Tag = "no_cedula"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(27, 174)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(60, 13)
-        Me.Label9.TabIndex = 21
-        Me.Label9.Text = "No. Cedula"
-        '
-        'TextCorreo
-        '
-        Me.TextCorreo.Location = New System.Drawing.Point(356, 168)
-        Me.TextCorreo.Name = "TextCorreo"
-        Me.TextCorreo.Size = New System.Drawing.Size(158, 20)
-        Me.TextCorreo.TabIndex = 24
-        Me.TextCorreo.Tag = "correo"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(280, 174)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 13)
-        Me.Label11.TabIndex = 25
-        Me.Label11.Text = "Correo"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(108, 196)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 27
         '
         'mstCatedratico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(580, 461)
-        Me.Controls.Add(Me.dgvSalon)
+        Me.ClientSize = New System.Drawing.Size(580, 505)
+        Me.Controls.Add(Me.dgvEmpleado)
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mstCatedratico"
         Me.Text = "Empleado"
-        CType(Me.dgvSalon, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
         Me.gbIngresoDatos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents dgvSalon As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvEmpleado As System.Windows.Forms.DataGridView
     Friend WithEvents gbIngresoDatos As System.Windows.Forms.GroupBox
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
@@ -351,4 +372,6 @@ Partial Class mstCatedratico
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TextCelular As System.Windows.Forms.TextBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class

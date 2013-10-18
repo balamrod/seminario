@@ -23,8 +23,21 @@ Partial Class mstAlumno
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mstAlumno))
-        Me.dgvCarrera = New System.Windows.Forms.DataGridView()
+        Me.dgvAlumno = New System.Windows.Forms.DataGridView()
         Me.gbIngresoDatos = New System.Windows.Forms.GroupBox()
+        Me.txtCarreraEgresado = New System.Windows.Forms.TextBox()
+        Me.txtColegioEgresado = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtCelular = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.txtDpi = New System.Windows.Forms.TextBox()
+        Me.TxtCorreo = New System.Windows.Forms.TextBox()
+        Me.txtFechaNacimiento = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
@@ -36,33 +49,20 @@ Partial Class mstAlumno
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtFechaNacimiento = New System.Windows.Forms.TextBox()
-        Me.TxtCorreo = New System.Windows.Forms.TextBox()
-        Me.txtDpi = New System.Windows.Forms.TextBox()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.txtCelular = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtColegioEgresado = New System.Windows.Forms.TextBox()
-        Me.txtCarreraEgresado = New System.Windows.Forms.TextBox()
-        CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvAlumno, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dgvCarrera
+        'dgvAlumno
         '
-        Me.dgvCarrera.AllowUserToAddRows = False
-        Me.dgvCarrera.AllowUserToDeleteRows = False
-        Me.dgvCarrera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCarrera.Location = New System.Drawing.Point(33, 244)
-        Me.dgvCarrera.Name = "dgvCarrera"
-        Me.dgvCarrera.ReadOnly = True
-        Me.dgvCarrera.Size = New System.Drawing.Size(529, 204)
-        Me.dgvCarrera.TabIndex = 12
+        Me.dgvAlumno.AllowUserToAddRows = False
+        Me.dgvAlumno.AllowUserToDeleteRows = False
+        Me.dgvAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAlumno.Location = New System.Drawing.Point(33, 244)
+        Me.dgvAlumno.Name = "dgvAlumno"
+        Me.dgvAlumno.ReadOnly = True
+        Me.dgvAlumno.Size = New System.Drawing.Size(529, 204)
+        Me.dgvAlumno.TabIndex = 12
         '
         'gbIngresoDatos
         '
@@ -96,6 +96,110 @@ Partial Class mstAlumno
         Me.gbIngresoDatos.TabIndex = 11
         Me.gbIngresoDatos.TabStop = False
         Me.gbIngresoDatos.Text = "Ingreso de datos"
+        '
+        'txtCarreraEgresado
+        '
+        Me.txtCarreraEgresado.Location = New System.Drawing.Point(124, 199)
+        Me.txtCarreraEgresado.Name = "txtCarreraEgresado"
+        Me.txtCarreraEgresado.Size = New System.Drawing.Size(348, 20)
+        Me.txtCarreraEgresado.TabIndex = 22
+        '
+        'txtColegioEgresado
+        '
+        Me.txtColegioEgresado.Location = New System.Drawing.Point(124, 172)
+        Me.txtColegioEgresado.Name = "txtColegioEgresado"
+        Me.txtColegioEgresado.Size = New System.Drawing.Size(348, 20)
+        Me.txtColegioEgresado.TabIndex = 21
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(24, 202)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(92, 13)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "Carrera Egresado:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(24, 179)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(93, 13)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "Colegio Egresado:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(272, 140)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(42, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Celular:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(24, 140)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(52, 13)
+        Me.Label7.TabIndex = 17
+        Me.Label7.Text = "Telefono:"
+        '
+        'txtCelular
+        '
+        Me.txtCelular.Location = New System.Drawing.Point(375, 140)
+        Me.txtCelular.Name = "txtCelular"
+        Me.txtCelular.Size = New System.Drawing.Size(100, 20)
+        Me.txtCelular.TabIndex = 16
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Location = New System.Drawing.Point(108, 141)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txtTelefono.TabIndex = 15
+        '
+        'txtDpi
+        '
+        Me.txtDpi.Location = New System.Drawing.Point(375, 113)
+        Me.txtDpi.Name = "txtDpi"
+        Me.txtDpi.Size = New System.Drawing.Size(139, 20)
+        Me.txtDpi.TabIndex = 14
+        '
+        'TxtCorreo
+        '
+        Me.TxtCorreo.Location = New System.Drawing.Point(108, 114)
+        Me.TxtCorreo.Name = "TxtCorreo"
+        Me.TxtCorreo.Size = New System.Drawing.Size(158, 20)
+        Me.TxtCorreo.TabIndex = 13
+        '
+        'txtFechaNacimiento
+        '
+        Me.txtFechaNacimiento.Location = New System.Drawing.Point(375, 87)
+        Me.txtFechaNacimiento.Name = "txtFechaNacimiento"
+        Me.txtFechaNacimiento.Size = New System.Drawing.Size(139, 20)
+        Me.txtFechaNacimiento.TabIndex = 12
+        Me.txtFechaNacimiento.Tag = "fecha_nac"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(272, 92)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 13)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Fecha Nacimiento"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(21, 92)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(31, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Sexo"
         '
         'btnModificar
         '
@@ -143,7 +247,7 @@ Partial Class mstAlumno
         Me.txtSexo.Name = "txtSexo"
         Me.txtSexo.Size = New System.Drawing.Size(158, 20)
         Me.txtSexo.TabIndex = 6
-        Me.txtSexo.Tag = "descripcion"
+        Me.txtSexo.Tag = "sexo"
         '
         'txtNombres
         '
@@ -152,7 +256,7 @@ Partial Class mstAlumno
         Me.txtNombres.Name = "txtNombres"
         Me.txtNombres.Size = New System.Drawing.Size(158, 20)
         Me.txtNombres.TabIndex = 1
-        Me.txtNombres.Tag = "id_carrera"
+        Me.txtNombres.Tag = "nombres"
         '
         'txtApellidos
         '
@@ -161,7 +265,7 @@ Partial Class mstAlumno
         Me.txtApellidos.Name = "txtApellidos"
         Me.txtApellidos.Size = New System.Drawing.Size(181, 20)
         Me.txtApellidos.TabIndex = 2
-        Me.txtApellidos.Tag = "nombre"
+        Me.txtApellidos.Tag = "apellidos"
         '
         'Label2
         '
@@ -199,126 +303,23 @@ Partial Class mstAlumno
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Apellidos: "
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(21, 92)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(31, 13)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Sexo"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(272, 92)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(93, 13)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Fecha Nacimiento"
-        '
-        'txtFechaNacimiento
-        '
-        Me.txtFechaNacimiento.Location = New System.Drawing.Point(375, 87)
-        Me.txtFechaNacimiento.Name = "txtFechaNacimiento"
-        Me.txtFechaNacimiento.Size = New System.Drawing.Size(139, 20)
-        Me.txtFechaNacimiento.TabIndex = 12
-        '
-        'TxtCorreo
-        '
-        Me.TxtCorreo.Location = New System.Drawing.Point(108, 114)
-        Me.TxtCorreo.Name = "TxtCorreo"
-        Me.TxtCorreo.Size = New System.Drawing.Size(158, 20)
-        Me.TxtCorreo.TabIndex = 13
-        '
-        'txtDpi
-        '
-        Me.txtDpi.Location = New System.Drawing.Point(375, 113)
-        Me.txtDpi.Name = "txtDpi"
-        Me.txtDpi.Size = New System.Drawing.Size(139, 20)
-        Me.txtDpi.TabIndex = 14
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.Location = New System.Drawing.Point(108, 141)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
-        Me.txtTelefono.TabIndex = 15
-        '
-        'txtCelular
-        '
-        Me.txtCelular.Location = New System.Drawing.Point(375, 140)
-        Me.txtCelular.Name = "txtCelular"
-        Me.txtCelular.Size = New System.Drawing.Size(100, 20)
-        Me.txtCelular.TabIndex = 16
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(24, 140)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(52, 13)
-        Me.Label7.TabIndex = 17
-        Me.Label7.Text = "Telefono:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(272, 140)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(42, 13)
-        Me.Label8.TabIndex = 18
-        Me.Label8.Text = "Celular:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(24, 179)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(93, 13)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "Colegio Egresado:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(24, 202)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(92, 13)
-        Me.Label10.TabIndex = 20
-        Me.Label10.Text = "Carrera Egresado:"
-        '
-        'txtColegioEgresado
-        '
-        Me.txtColegioEgresado.Location = New System.Drawing.Point(124, 172)
-        Me.txtColegioEgresado.Name = "txtColegioEgresado"
-        Me.txtColegioEgresado.Size = New System.Drawing.Size(348, 20)
-        Me.txtColegioEgresado.TabIndex = 21
-        '
-        'txtCarreraEgresado
-        '
-        Me.txtCarreraEgresado.Location = New System.Drawing.Point(124, 199)
-        Me.txtCarreraEgresado.Name = "txtCarreraEgresado"
-        Me.txtCarreraEgresado.Size = New System.Drawing.Size(348, 20)
-        Me.txtCarreraEgresado.TabIndex = 22
-        '
         'mstAlumno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(584, 473)
-        Me.Controls.Add(Me.dgvCarrera)
+        Me.Controls.Add(Me.dgvAlumno)
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mstAlumno"
         Me.Text = "Alumno"
-        CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvAlumno, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
         Me.gbIngresoDatos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents dgvCarrera As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvAlumno As System.Windows.Forms.DataGridView
     Friend WithEvents gbIngresoDatos As System.Windows.Forms.GroupBox
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
