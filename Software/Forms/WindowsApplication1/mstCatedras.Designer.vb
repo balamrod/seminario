@@ -171,7 +171,7 @@ Partial Class mstCatedras
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mstCatedras"
-        Me.Text = "mstCatedras"
+        Me.Text = "Catedras"
         CType(Me.dgvSalon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
         Me.gbIngresoDatos.PerformLayout()

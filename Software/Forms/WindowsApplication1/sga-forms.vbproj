@@ -82,6 +82,24 @@
     <Compile Include="Clases\clsHelper.vb" />
     <Compile Include="Clases\clsABC.vb" />
     <Compile Include="Clases\clsHelperSQL.vb" />
+    <Compile Include="mstAlumno.Designer.vb">
+      <DependentUpon>mstAlumno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mstAlumno.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mstCatedras.Designer.vb">
+      <DependentUpon>mstCatedras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mstCatedras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mstCatedratico.Designer.vb">
+      <DependentUpon>mstCatedratico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mstCatedratico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MstAsignacion.Designer.vb">
       <DependentUpon>MstAsignacion.vb</DependentUpon>
     </Compile>
@@ -155,8 +173,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="mstAlumno.resx">
+      <DependentUpon>mstAlumno.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MstAsignacion.resx">
       <DependentUpon>MstAsignacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mstCatedras.resx">
+      <DependentUpon>mstCatedras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mstCatedratico.resx">
+      <DependentUpon>mstCatedratico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mstSalon.resx">
       <DependentUpon>mstSalon.vb</DependentUpon>

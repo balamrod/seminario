@@ -1,14 +1,10 @@
-﻿Public Class mstCatedratico
-
-    Private Sub mstCatedratico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
+﻿Public Class mstAlumno
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
 
     End Sub
 
