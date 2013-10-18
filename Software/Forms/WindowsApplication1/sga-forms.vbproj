@@ -88,6 +88,12 @@
     <Compile Include="MstAsignacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="mstSalon.Designer.vb">
+      <DependentUpon>mstSalon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mstSalon.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MstSeccion.Designer.vb">
       <DependentUpon>MstSeccion.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
   <ItemGroup>
     <EmbeddedResource Include="MstAsignacion.resx">
       <DependentUpon>MstAsignacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mstSalon.resx">
+      <DependentUpon>mstSalon.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrsAsignacion.resx">
       <DependentUpon>TrsAsignacion.vb</DependentUpon>
