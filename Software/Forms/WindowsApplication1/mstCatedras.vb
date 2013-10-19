@@ -1,8 +1,6 @@
-﻿Public Class mstCatedras
+﻿Imports WindowsApplication1.clsHelper
 
-
-
-
+Public Class mstCatedras
     Private Sub mstCatedras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
