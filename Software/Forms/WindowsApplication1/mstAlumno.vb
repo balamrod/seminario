@@ -70,6 +70,7 @@ Public Class mstAlumno
         iId = GetItem(dgvAlumno, "Nombres")
 
         ''txtCodigo.Text = iId
+        ''where anio carnet - txtr anio carrera = combo and correlato = tecbox
         txtNombres.Text = GetItem(dgvAlumno, "nombres")
         txtApellidos.Text = GetItem(dgvAlumno, "apellidos")
         txtSexo.Text = GetItem(dgvAlumno, "sexo")

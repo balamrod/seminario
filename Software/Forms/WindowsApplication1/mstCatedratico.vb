@@ -1,4 +1,8 @@
-﻿Public Class mstCatedratico
+﻿Imports WindowsApplication1.clsABC
+Imports WindowsApplication1.clsHelperSQL
+Imports WindowsApplication1.clsHelper
+Imports WindowsApplication1.clsGlobales
+Public Class mstCatedratico
 
     Private Sub mstCatedratico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 

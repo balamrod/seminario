@@ -70,4 +70,8 @@ Public Class mstSalon
         txtCantidad.Text = GetItem(dgvSalon, "capacidad") ''nombre de la bd
        
     End Sub
+
+    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
+
+    End Sub
 End Class

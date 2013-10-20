@@ -1,4 +1,9 @@
-﻿Public Class mstCatedras
+﻿Imports WindowsApplication1.clsABC
+Imports WindowsApplication1.clsHelperSQL
+Imports WindowsApplication1.clsHelper
+Imports WindowsApplication1.clsGlobales
+
+Public Class mstCatedras
 
 
 

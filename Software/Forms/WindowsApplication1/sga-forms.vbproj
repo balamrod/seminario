@@ -82,6 +82,12 @@
     <Compile Include="Clases\clsHelper.vb" />
     <Compile Include="Clases\clsABC.vb" />
     <Compile Include="Clases\clsHelperSQL.vb" />
+    <Compile Include="mstHorario.Designer.vb">
+      <DependentUpon>mstHorario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mstHorario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mstAlumno.Designer.vb">
       <DependentUpon>mstAlumno.vb</DependentUpon>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mstCatedratico.resx">
       <DependentUpon>mstCatedratico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mstHorario.resx">
+      <DependentUpon>mstHorario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mstSalon.resx">
       <DependentUpon>mstSalon.vb</DependentUpon>

@@ -49,6 +49,8 @@ Partial Class mstAlumno
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.dgvAlumno, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
         Me.SuspendLayout()
@@ -58,7 +60,7 @@ Partial Class mstAlumno
         Me.dgvAlumno.AllowUserToAddRows = False
         Me.dgvAlumno.AllowUserToDeleteRows = False
         Me.dgvAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAlumno.Location = New System.Drawing.Point(33, 244)
+        Me.dgvAlumno.Location = New System.Drawing.Point(33, 314)
         Me.dgvAlumno.Name = "dgvAlumno"
         Me.dgvAlumno.ReadOnly = True
         Me.dgvAlumno.Size = New System.Drawing.Size(529, 204)
@@ -66,6 +68,8 @@ Partial Class mstAlumno
         '
         'gbIngresoDatos
         '
+        Me.gbIngresoDatos.Controls.Add(Me.ComboBox1)
+        Me.gbIngresoDatos.Controls.Add(Me.Label11)
         Me.gbIngresoDatos.Controls.Add(Me.txtCarreraEgresado)
         Me.gbIngresoDatos.Controls.Add(Me.txtColegioEgresado)
         Me.gbIngresoDatos.Controls.Add(Me.Label10)
@@ -92,7 +96,7 @@ Partial Class mstAlumno
         Me.gbIngresoDatos.Controls.Add(Me.Label1)
         Me.gbIngresoDatos.Location = New System.Drawing.Point(33, 14)
         Me.gbIngresoDatos.Name = "gbIngresoDatos"
-        Me.gbIngresoDatos.Size = New System.Drawing.Size(529, 224)
+        Me.gbIngresoDatos.Size = New System.Drawing.Size(529, 294)
         Me.gbIngresoDatos.TabIndex = 11
         Me.gbIngresoDatos.TabStop = False
         Me.gbIngresoDatos.Text = "Ingreso de datos"
@@ -303,11 +307,28 @@ Partial Class mstAlumno
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Apellidos: "
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(27, 233)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(50, 13)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "IdCarrera"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(87, 233)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 24
+        '
         'mstAlumno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 473)
+        Me.ClientSize = New System.Drawing.Size(599, 530)
         Me.Controls.Add(Me.dgvAlumno)
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -345,4 +366,6 @@ Partial Class mstAlumno
     Friend WithEvents txtCelular As System.Windows.Forms.TextBox
     Friend WithEvents txtTelefono As System.Windows.Forms.TextBox
     Friend WithEvents txtDpi As System.Windows.Forms.TextBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
 End Class
