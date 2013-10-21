@@ -118,10 +118,10 @@
     <Compile Include="mstSalon.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MstSeccion.Designer.vb">
-      <DependentUpon>MstSeccion.vb</DependentUpon>
+    <Compile Include="mstSeccion.Designer.vb">
+      <DependentUpon>mstSeccion.vb</DependentUpon>
     </Compile>
-    <Compile Include="MstSeccion.vb">
+    <Compile Include="mstSeccion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TrsAsignacion.Designer.vb">
@@ -177,6 +177,12 @@
     <Compile Include="MstPensum.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TrsAsignacionCatedratico.Designer.vb">
+      <DependentUpon>TrsAsignacionCatedratico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TrsAsignacionCatedratico.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="mstAlumno.resx">
@@ -220,6 +226,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrsAsignacionCatedratico.resx">
+      <DependentUpon>TrsAsignacionCatedratico.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

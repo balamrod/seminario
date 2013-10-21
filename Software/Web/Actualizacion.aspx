@@ -9,7 +9,7 @@
             <asp:Panel ID="Panel1" runat="server">
             </asp:Panel>
             <div >
-                <table border="" bordercolor="1" style="background-color:" width="100%" cellpadding="" cellspacing="">
+                <table border="" bordercolor="1" width="100%" cellpadding="" cellspacing="">
 	<tr>
 		<td class="auto-style1">
 
@@ -62,20 +62,7 @@
     </section>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h3>Acerca del proyecto</h3>
-    <ol class="round">
-        <li class="one">
-            <h5>Introducción</h5>
-            Esta es una prueba preliminar para hosting y conexion con la Base de datos, se estará actualizando de forma periodica el sistema con fines académicos</li>
-        <li class="two">
-            <h5>B&#39;alam Luis Felipe Rodríguez García</h5>
-            .
-        </li>
-        <li class="three">
-            <h5>Estuardo Martínez</h5>
-            .
-        </li>
-    </ol>
+    
 </asp:Content>
 <asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
     <style type="text/css">

@@ -23,9 +23,7 @@ Public Class MstCarrera
         VectorTxt(5).Tag = "sucursal_id_sucursal"
         VectorTxt(5).Text = cbSucursal.SelectedValue()
 
-        'VectorTxt(0) =  New TextBox
-        'VectorTxt(0).Tag = "id_carrera"
-        'VectorTxt(0).Text = New Guid().ToString
+  
     End Sub
 
     ''' <summary>
@@ -35,11 +33,12 @@ Public Class MstCarrera
     ''' </summary>
     Private Sub MstCarrera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim DsComboSucursal As DataSet = ExecuteQuery("select id_sucursal as id, nombre from sucursal")
+        FillComboBox(cbSucursal, DsComboSucursal, "id", "nombre")
 
         FillDataGridView(dgvCarrera, ExecuteQuery(sActualizarGrid))
-        dgvCarrera.Columns("sucursal_id_sucursal").Visible = False
+        ''dgvCarrera.Columns("sucursal_id_sucursal").Visible = False
 
-        FillComboBox(cbSucursal, DsComboSucursal, "id", "nombre")
+
         LimpiarTxtBox(Me)
     End Sub
 
@@ -88,7 +87,6 @@ Public Class MstCarrera
     ''' </summary>
     Private Sub dgvCarrera_SelectionChanged(sender As Object, e As EventArgs) Handles dgvCarrera.SelectionChanged
         iId = GetItem(dgvCarrera, "código")
-
         txtCodigo.Text = iId
         txtNombre.Text = GetItem(dgvCarrera, "nombre")
         txtDescripcion.Text = GetItem(dgvCarrera, "descripcion")
@@ -109,5 +107,13 @@ Public Class MstCarrera
             FillDataGridView(dgvCarrera, ExecuteQuery(sActualizarGrid))
             LimpiarTxtBox(Me)
         End If
+    End Sub
+
+    Private Sub gbIngresoDatos_Enter(sender As Object, e As EventArgs) Handles gbIngresoDatos.Enter
+
+    End Sub
+
+    Private Sub dgvCarrera_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCarrera.CellContentClick
+
     End Sub
 End Class
