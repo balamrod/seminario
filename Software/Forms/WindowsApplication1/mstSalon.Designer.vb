@@ -149,9 +149,9 @@ Partial Class mstSalon
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(18, 63)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 13)
+        Me.Label6.Size = New System.Drawing.Size(58, 13)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Cantidad"
+        Me.Label6.Text = "Capacidad"
         '
         'Label1
         '
@@ -171,6 +171,7 @@ Partial Class mstSalon
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mstSalon"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Salon"
         CType(Me.dgvSalon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)

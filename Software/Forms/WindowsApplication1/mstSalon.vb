@@ -74,4 +74,12 @@ Public Class mstSalon
     Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
 
     End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub dgvSalon_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSalon.CellContentClick
+
+    End Sub
 End Class

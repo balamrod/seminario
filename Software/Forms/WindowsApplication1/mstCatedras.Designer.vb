@@ -25,15 +25,17 @@ Partial Class mstCatedras
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mstCatedras))
         Me.dgvCatedras = New System.Windows.Forms.DataGridView()
         Me.gbIngresoDatos = New System.Windows.Forms.GroupBox()
+        Me.cbxPensum = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnAniadir = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
-        Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
@@ -44,30 +46,67 @@ Partial Class mstCatedras
         Me.dgvCatedras.AllowUserToAddRows = False
         Me.dgvCatedras.AllowUserToDeleteRows = False
         Me.dgvCatedras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCatedras.Location = New System.Drawing.Point(26, 196)
+        Me.dgvCatedras.Location = New System.Drawing.Point(15, 231)
         Me.dgvCatedras.Name = "dgvCatedras"
         Me.dgvCatedras.ReadOnly = True
-        Me.dgvCatedras.Size = New System.Drawing.Size(529, 184)
-        Me.dgvCatedras.TabIndex = 16
+        Me.dgvCatedras.Size = New System.Drawing.Size(529, 214)
+        Me.dgvCatedras.TabIndex = 12
         '
         'gbIngresoDatos
         '
+        Me.gbIngresoDatos.Controls.Add(Me.cbxPensum)
+        Me.gbIngresoDatos.Controls.Add(Me.Label4)
+        Me.gbIngresoDatos.Controls.Add(Me.txtCodigo)
+        Me.gbIngresoDatos.Controls.Add(Me.Label3)
         Me.gbIngresoDatos.Controls.Add(Me.btnModificar)
         Me.gbIngresoDatos.Controls.Add(Me.btnEliminar)
         Me.gbIngresoDatos.Controls.Add(Me.btnLimpiar)
         Me.gbIngresoDatos.Controls.Add(Me.btnAniadir)
         Me.gbIngresoDatos.Controls.Add(Me.txtDescripcion)
-        Me.gbIngresoDatos.Controls.Add(Me.txtCantidad)
         Me.gbIngresoDatos.Controls.Add(Me.txtNombre)
         Me.gbIngresoDatos.Controls.Add(Me.Label2)
-        Me.gbIngresoDatos.Controls.Add(Me.Label6)
         Me.gbIngresoDatos.Controls.Add(Me.Label1)
-        Me.gbIngresoDatos.Location = New System.Drawing.Point(26, 30)
+        Me.gbIngresoDatos.Location = New System.Drawing.Point(15, 11)
         Me.gbIngresoDatos.Name = "gbIngresoDatos"
-        Me.gbIngresoDatos.Size = New System.Drawing.Size(529, 143)
-        Me.gbIngresoDatos.TabIndex = 15
+        Me.gbIngresoDatos.Size = New System.Drawing.Size(529, 214)
+        Me.gbIngresoDatos.TabIndex = 11
         Me.gbIngresoDatos.TabStop = False
         Me.gbIngresoDatos.Text = "Ingreso de datos"
+        '
+        'cbxPensum
+        '
+        Me.cbxPensum.FormattingEnabled = True
+        Me.cbxPensum.Location = New System.Drawing.Point(341, 161)
+        Me.cbxPensum.Name = "cbxPensum"
+        Me.cbxPensum.Size = New System.Drawing.Size(121, 21)
+        Me.cbxPensum.TabIndex = 4
+        Me.cbxPensum.Tag = "pensum_id_pensum"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(259, 164)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(45, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Pensum"
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Location = New System.Drawing.Point(108, 161)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtCodigo.TabIndex = 3
+        Me.txtCodigo.Tag = "codigo"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(18, 161)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(40, 13)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "Codigo"
         '
         'btnModificar
         '
@@ -75,7 +114,7 @@ Partial Class mstCatedras
         Me.btnModificar.Location = New System.Drawing.Point(478, 19)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(36, 36)
-        Me.btnModificar.TabIndex = 9
+        Me.btnModificar.TabIndex = 7
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnEliminar
@@ -84,7 +123,7 @@ Partial Class mstCatedras
         Me.btnEliminar.Location = New System.Drawing.Point(436, 19)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(36, 36)
-        Me.btnEliminar.TabIndex = 8
+        Me.btnEliminar.TabIndex = 6
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnLimpiar
@@ -94,7 +133,7 @@ Partial Class mstCatedras
         Me.btnLimpiar.Location = New System.Drawing.Point(21, 19)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(86, 36)
-        Me.btnLimpiar.TabIndex = 7
+        Me.btnLimpiar.TabIndex = 8
         Me.btnLimpiar.Text = "          Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -104,59 +143,41 @@ Partial Class mstCatedras
         Me.btnAniadir.Location = New System.Drawing.Point(394, 19)
         Me.btnAniadir.Name = "btnAniadir"
         Me.btnAniadir.Size = New System.Drawing.Size(36, 36)
-        Me.btnAniadir.TabIndex = 7
+        Me.btnAniadir.TabIndex = 5
         Me.btnAniadir.UseVisualStyleBackColor = True
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(108, 87)
+        Me.txtDescripcion.Location = New System.Drawing.Point(108, 96)
         Me.txtDescripcion.MaxLength = 200
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(406, 43)
-        Me.txtDescripcion.TabIndex = 6
-        Me.txtDescripcion.Tag = "observacion"
-        '
-        'txtCantidad
-        '
-        Me.txtCantidad.Location = New System.Drawing.Point(108, 60)
-        Me.txtCantidad.MaxLength = 4
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(79, 20)
-        Me.txtCantidad.TabIndex = 1
-        Me.txtCantidad.Tag = "capacidad"
+        Me.txtDescripcion.Size = New System.Drawing.Size(406, 48)
+        Me.txtDescripcion.TabIndex = 2
+        Me.txtDescripcion.Tag = "descripcion"
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(246, 61)
+        Me.txtNombre.Location = New System.Drawing.Point(108, 60)
         Me.txtNombre.MaxLength = 100
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(268, 20)
-        Me.txtNombre.TabIndex = 2
+        Me.txtNombre.TabIndex = 1
         Me.txtNombre.Tag = "nombre"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(18, 87)
+        Me.Label2.Location = New System.Drawing.Point(18, 96)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 13)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Descripción:"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(18, 63)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 13)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Cantidad"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(193, 64)
+        Me.Label1.Location = New System.Drawing.Point(17, 63)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(47, 13)
         Me.Label1.TabIndex = 0
@@ -166,12 +187,13 @@ Partial Class mstCatedras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(578, 410)
+        Me.ClientSize = New System.Drawing.Size(558, 463)
         Me.Controls.Add(Me.dgvCatedras)
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mstCatedras"
-        Me.Text = "Catedras"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Catedra"
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
         Me.gbIngresoDatos.PerformLayout()
@@ -185,9 +207,11 @@ Partial Class mstCatedras
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents btnAniadir As System.Windows.Forms.Button
     Friend WithEvents txtDescripcion As System.Windows.Forms.TextBox
-    Friend WithEvents txtCantidad As System.Windows.Forms.TextBox
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents cbxPensum As System.Windows.Forms.ComboBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtCodigo As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

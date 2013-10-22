@@ -167,6 +167,7 @@ Partial Class mstHorario
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mstHorario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Horario"
         CType(Me.dgvHorario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
