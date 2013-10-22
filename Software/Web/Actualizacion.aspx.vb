@@ -15,6 +15,7 @@ Partial Class _Default
     Dim maximo As DataSet
     Dim temp As String
     Dim nuevo As String
+    Dim tablaUsuario As String
 #End Region
 
     Private Sub bloqueado(valor As Boolean)
@@ -31,16 +32,23 @@ Partial Class _Default
 
     Private Sub actualizarInformacion()
 
-        Dim DsPersona As DataSet = ExecuteQuery("select correo,telefono_casa,celular,direccion from alumno where anio_carnet = 07 and correlativo_carnet = 2210 and id_carrera = 901", cadenaConexion)
+        Dim DsPersona As DataSet = ExecuteQuery("select correo,telefono_casa,celular,direccion, concat(nombres, ' ',apellidos) as nombre from " + tablaUsuario + " where usuario_id_usuario = '" + idUsuario + "'", cadenaConexion)
 
         txtCorreo.Text = GetItem(DsPersona, "correo")
         txtCelular.Text = GetItem(DsPersona, "celular")
         txtDomicilio.Text = GetItem(DsPersona, "direccion")
         txtTelefono.Text = GetItem(DsPersona, "telefono_casa")
-
+        lblNombre.Text = GetItem(DsPersona, "nombre")
         bloqueado(True)
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If esAlumno = "1" Then
+            tablaUsuario = "alumno"
+            lblTipo.Text = "Alumno"
+        Else
+            tablaUsuario = "empleado"
+            lblTipo.Text = "Catedrático"
+        End If
 
         If Not Me.Page.IsPostBack Then
             actualizarInformacion()
@@ -48,9 +56,8 @@ Partial Class _Default
 
     End Sub
 
-
     Protected Sub btnGuardar_Click(sender As Object, e As ImageClickEventArgs) Handles btnGuardar.Click
-        BuildProcedure(2, "alumno", "correo = '" & txtCorreo.Text & "', celular = '" & txtCelular.Text & "', direccion = '" & txtDomicilio.Text & "', telefono_casa = '" & txtTelefono.Text & "'", "", "anio_carnet = 07 and correlativo_carnet = 2210 and id_carrera = 901", sCadenaConexion, Me)
+        BuildProcedure(2, tablaUsuario, "correo = '" & txtCorreo.Text & "', celular = '" & txtCelular.Text & "', direccion = '" & txtDomicilio.Text & "', telefono_casa = '" & txtTelefono.Text & "'", "", "usuario_id_usuario= '" & idUsuario & "'", sCadenaConexion, Me)
         actualizarInformacion()
     End Sub
 

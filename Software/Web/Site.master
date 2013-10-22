@@ -48,23 +48,21 @@
                    
                     <a href="~/">Sistema de Gestión</a> Académica</p>
             </div>
-            <div class="float-right">
+            <div class="float-right" style="padding-bottom:30px ">
                 <section id="login">
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <asp:LoginView runat="server" ViewStateMode="Enabled" id="LoginViewSga">
                         <AnonymousTemplate>
                             <ul>
-                                <li>B'alam Luis Felipe Rodríguez García</li>
-                                <!--<li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Cerrar sesión</a></li>-->
-                                <li><a id="A1" runat="server" href="">Cerrar sesión</a></li>
+                                <li id="loginLink">Bienvenido, Por favor autentícate</li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
-                            <p>
-                                Hello, <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
-                                    <asp:LoginName runat="server" CssClass="username" />
-                                </a>.
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/" />
-                            </p>
+                            
+                                Bienvenido, 
+                                    <asp:LoginName id="LoginNameSga" runat="server"  CssClass="username" />
+                                .
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect"  onloggingout="LoginStatus1_LoggingOut" LogoutText="Cerrar sesión" LogoutPageUrl="~/" />
+                            
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </section>
@@ -76,11 +74,11 @@
                 <div style=" position:relative">
                     <nav>
                         <ul id="menu">
-                             <li><a id="A6" runat="server" href="~/inicio.aspx">Inicio</a></li> 
-                            <li><a id="A2" runat="server" href="~/default.aspx">Actualizar mi Información</a></li> 
-                            <li><a id="A3" runat="server" href="~/">Ver notas</a></li>                     
-                            <li><a id="A4" runat="server" href="~/">Operaciones Académicas</a></li> 
-                            <li><a id="A5" runat="server" href="~/">Contactenos</a></li>
+                            
+                            <li runat="server" id ="menuActualizacion"><a id="A2" runat="server" href="~/actualizacion.aspx">Actualizar mi Información</a></li> 
+                            <li runat="server" id ="menuVerNotas"><a id="A3" runat="server" href="~/">Ver notas</a></li>                     
+                            <li  runat="server" id ="menuOperaciones"><a id="A4" runat="server" href="~/">Operaciones Académicas</a></li> 
+                            <li  runat="server" id ="menuContactenos"><a id="A5" runat="server" href="~/">Contactenos</a></li>
                         </ul>
                     </nav>
                 </div>

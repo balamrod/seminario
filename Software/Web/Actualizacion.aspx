@@ -1,20 +1,41 @@
 ﻿<%@ Page Title="SGA - Sistema de Gestión Académica" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Actualizacion.aspx.vb" Inherits="_Default" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
-    <section class="featured">
-        <div class="content-wrapper">
+    <section class="featured" >
+       
+        <div class="content-wrapper" style="height:500px">
+             <hgroup class="title">
+                <h1>Información Personal.</h1>
+            </hgroup>
+             <div style="border:double;border-color:white">
+                 <table style="width:100%" >
+	            <tr>
+		            <td  class="auto-style1">
+                        <asp:Label ID="Label5" runat="server" Text="Nombre:"></asp:Label>
+		            </td>
+		            <td>
+                        <asp:Label ID="lblNombre" runat="server" Text=""></asp:Label>
+		            </td>
+		           <td  class="auto-style3">
+                        <asp:Label ID="Label7" runat="server" Text="Tipo:"></asp:Label>
+		            </td>
+		            <td>
+                        <asp:Label ID="lblTipo" runat="server" Text=""></asp:Label>
+		            </td>
+	            </tr>
+            </table>
+
+             </div>
+            
+
             <hgroup class="title">
                 <h1>Actualización.</h1>
             </hgroup>
-            <asp:Panel ID="Panel1" runat="server">
-            </asp:Panel>
-            <div >
-                <table border="" bordercolor="1" width="100%" cellpadding="" cellspacing="">
+            
+            <div style="border:double;border-color:white"  >
+                <table >
 	<tr>
 		<td class="auto-style1">
-
-
-
                 <asp:Label ID="Label1" runat="server" Text="Correo Personal:"></asp:Label>
 
                 </td>
@@ -51,9 +72,11 @@
 
                 </td>
 	</tr>
-</table>
-                <asp:ImageButton ID="btnGuardar" runat="server" Height="35px" ImageAlign="Right" ImageUrl="~/Images/save.png" Width="40px" ToolTip="Guardar" Visible="False" />
-                <asp:ImageButton ID="btnModificar" runat="server" Height="35px" ImageAlign="Right" ImageUrl="~/Images/editar2.png" Width="40px" Visible="False" ToolTip="Modfiicar" />
+</table>    
+                    <div style="padding-bottom:15px">
+                        <asp:ImageButton ID="btnGuardar" runat="server" Height="35px" ImageAlign="Right" ImageUrl="~/Images/save.png" Width="40px" ToolTip="Guardar" Visible="False" />
+                        <asp:ImageButton ID="btnModificar" runat="server" Height="35px" ImageAlign="Right" ImageUrl="~/Images/editar2.png" Width="40px" Visible="False" ToolTip="Modfiicar" />
+                    </div>
                 <br />
                 <br />
             </div>

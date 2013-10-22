@@ -1,4 +1,5 @@
-﻿
+﻿Imports Globales
+
 Partial Class SiteMaster
     Inherits MasterPage
 
@@ -41,5 +42,22 @@ Partial Class SiteMaster
                 Throw New InvalidOperationException("Error de validación del token Anti-XSRF.")
             End If
         End If
+    End Sub
+
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If (Not IsPostBack And Not usuarioEstaOnline) Then
+            menuActualizacion.Visible = False
+            menuContactenos.Visible = False
+            menuOperaciones.Visible = False
+            menuVerNotas.Visible = False
+        End If
+
+    End Sub
+
+    Sub LoginStatus1_LoggingOut(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.LoginCancelEventArgs)
+        usuarioEstaOnline = False
+        FormsAuthentication.SignOut()
+        Response.Redirect("~/inicio.aspx")
+
     End Sub
 End Class
