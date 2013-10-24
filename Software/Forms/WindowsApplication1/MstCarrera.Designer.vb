@@ -41,8 +41,10 @@ Partial Class MstCarrera
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvCarrera = New System.Windows.Forms.DataGridView()
+        Me.pnlBotones = New System.Windows.Forms.Panel()
         Me.gbIngresoDatos.SuspendLayout()
         CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlBotones.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -56,11 +58,9 @@ Partial Class MstCarrera
         '
         'gbIngresoDatos
         '
+        Me.gbIngresoDatos.Controls.Add(Me.pnlBotones)
         Me.gbIngresoDatos.Controls.Add(Me.cbSucursal)
-        Me.gbIngresoDatos.Controls.Add(Me.btnModificar)
-        Me.gbIngresoDatos.Controls.Add(Me.btnEliminar)
         Me.gbIngresoDatos.Controls.Add(Me.btnLimpiar)
-        Me.gbIngresoDatos.Controls.Add(Me.btnAniadir)
         Me.gbIngresoDatos.Controls.Add(Me.txtDescripcion)
         Me.gbIngresoDatos.Controls.Add(Me.txtFechaAcuerdo)
         Me.gbIngresoDatos.Controls.Add(Me.txtCodigo)
@@ -90,7 +90,7 @@ Partial Class MstCarrera
         'btnModificar
         '
         Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(478, 19)
+        Me.btnModificar.Location = New System.Drawing.Point(86, 3)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(36, 36)
         Me.btnModificar.TabIndex = 9
@@ -99,7 +99,7 @@ Partial Class MstCarrera
         'btnEliminar
         '
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(436, 19)
+        Me.btnEliminar.Location = New System.Drawing.Point(44, 3)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(36, 36)
         Me.btnEliminar.TabIndex = 8
@@ -119,7 +119,7 @@ Partial Class MstCarrera
         'btnAniadir
         '
         Me.btnAniadir.Image = CType(resources.GetObject("btnAniadir.Image"), System.Drawing.Image)
-        Me.btnAniadir.Location = New System.Drawing.Point(394, 19)
+        Me.btnAniadir.Location = New System.Drawing.Point(2, 3)
         Me.btnAniadir.Name = "btnAniadir"
         Me.btnAniadir.Size = New System.Drawing.Size(36, 36)
         Me.btnAniadir.TabIndex = 7
@@ -226,6 +226,16 @@ Partial Class MstCarrera
         Me.dgvCarrera.Size = New System.Drawing.Size(529, 256)
         Me.dgvCarrera.TabIndex = 10
         '
+        'pnlBotones
+        '
+        Me.pnlBotones.Controls.Add(Me.btnEliminar)
+        Me.pnlBotones.Controls.Add(Me.btnAniadir)
+        Me.pnlBotones.Controls.Add(Me.btnModificar)
+        Me.pnlBotones.Location = New System.Drawing.Point(388, 10)
+        Me.pnlBotones.Name = "pnlBotones"
+        Me.pnlBotones.Size = New System.Drawing.Size(126, 45)
+        Me.pnlBotones.TabIndex = 10
+        '
         'MstCarrera
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -239,6 +249,7 @@ Partial Class MstCarrera
         Me.gbIngresoDatos.ResumeLayout(False)
         Me.gbIngresoDatos.PerformLayout()
         CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlBotones.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -260,5 +271,6 @@ Partial Class MstCarrera
     Friend WithEvents txtCodigo As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
+    Friend WithEvents pnlBotones As System.Windows.Forms.Panel
 
 End Class

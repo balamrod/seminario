@@ -49,9 +49,11 @@ Partial Class TrsAsignacionCatedratico
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.pnlBotones = New System.Windows.Forms.Panel()
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
         Me.bgBusquedaCatedra.SuspendLayout()
+        Me.pnlBotones.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvCatedras
@@ -67,13 +69,11 @@ Partial Class TrsAsignacionCatedratico
         '
         'gbIngresoDatos
         '
+        Me.gbIngresoDatos.Controls.Add(Me.pnlBotones)
         Me.gbIngresoDatos.Controls.Add(Me.cbSeccion)
         Me.gbIngresoDatos.Controls.Add(Me.cbSalon)
         Me.gbIngresoDatos.Controls.Add(Me.cbHorario)
         Me.gbIngresoDatos.Controls.Add(Me.cbCatedratico)
-        Me.gbIngresoDatos.Controls.Add(Me.btnModificar)
-        Me.gbIngresoDatos.Controls.Add(Me.btnEliminar)
-        Me.gbIngresoDatos.Controls.Add(Me.btnAniadir)
         Me.gbIngresoDatos.Controls.Add(Me.Label2)
         Me.gbIngresoDatos.Controls.Add(Me.Label6)
         Me.gbIngresoDatos.Controls.Add(Me.Label3)
@@ -120,7 +120,7 @@ Partial Class TrsAsignacionCatedratico
         'btnModificar
         '
         Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(478, 19)
+        Me.btnModificar.Location = New System.Drawing.Point(90, 3)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(36, 36)
         Me.btnModificar.TabIndex = 9
@@ -129,7 +129,7 @@ Partial Class TrsAsignacionCatedratico
         'btnEliminar
         '
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(436, 19)
+        Me.btnEliminar.Location = New System.Drawing.Point(48, 3)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(36, 36)
         Me.btnEliminar.TabIndex = 8
@@ -138,7 +138,7 @@ Partial Class TrsAsignacionCatedratico
         'btnAniadir
         '
         Me.btnAniadir.Image = CType(resources.GetObject("btnAniadir.Image"), System.Drawing.Image)
-        Me.btnAniadir.Location = New System.Drawing.Point(394, 19)
+        Me.btnAniadir.Location = New System.Drawing.Point(6, 3)
         Me.btnAniadir.Name = "btnAniadir"
         Me.btnAniadir.Size = New System.Drawing.Size(36, 36)
         Me.btnAniadir.TabIndex = 7
@@ -303,6 +303,17 @@ Partial Class TrsAsignacionCatedratico
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Catedra:"
         '
+        'pnlBotones
+        '
+        Me.pnlBotones.Controls.Add(Me.btnEliminar)
+        Me.pnlBotones.Controls.Add(Me.btnAniadir)
+        Me.pnlBotones.Controls.Add(Me.btnModificar)
+        Me.pnlBotones.Location = New System.Drawing.Point(384, 13)
+        Me.pnlBotones.Name = "pnlBotones"
+        Me.pnlBotones.Size = New System.Drawing.Size(130, 42)
+        Me.pnlBotones.TabIndex = 12
+        Me.pnlBotones.Visible = False
+        '
         'TrsAsignacionCatedratico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -319,6 +330,7 @@ Partial Class TrsAsignacionCatedratico
         Me.gbIngresoDatos.PerformLayout()
         Me.bgBusquedaCatedra.ResumeLayout(False)
         Me.bgBusquedaCatedra.PerformLayout()
+        Me.pnlBotones.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -348,4 +360,5 @@ Partial Class TrsAsignacionCatedratico
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents cbCiclo As System.Windows.Forms.ComboBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents pnlBotones As System.Windows.Forms.Panel
 End Class

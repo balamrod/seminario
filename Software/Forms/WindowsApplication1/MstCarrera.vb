@@ -109,11 +109,5 @@ Public Class MstCarrera
         End If
     End Sub
 
-    Private Sub gbIngresoDatos_Enter(sender As Object, e As EventArgs) Handles gbIngresoDatos.Enter
-
-    End Sub
-
-    Private Sub dgvCarrera_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCarrera.CellContentClick
-
-    End Sub
+   
 End Class

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1D00C7D0-D42D-49A6-97D8-1791945C25E4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>WindowsApplication1.mstCatedras</StartupObject>
+    <StartupObject>WindowsApplication1.TrsAsignacionCatedratico</StartupObject>
     <RootNamespace>WindowsApplication1</RootNamespace>
     <AssemblyName>WindowsApplication1</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -94,18 +94,6 @@
     <Compile Include="mstAlumno.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mstCatedras.Designer.vb">
-      <DependentUpon>mstCatedras.vb</DependentUpon>
-    </Compile>
-    <Compile Include="mstCatedras.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mstCatedratico.Designer.vb">
-      <DependentUpon>mstCatedratico.vb</DependentUpon>
-    </Compile>
-    <Compile Include="mstCatedratico.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MstAsignacion.Designer.vb">
       <DependentUpon>MstAsignacion.vb</DependentUpon>
     </Compile>
@@ -190,12 +178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MstAsignacion.resx">
       <DependentUpon>MstAsignacion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mstCatedras.resx">
-      <DependentUpon>mstCatedras.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mstCatedratico.resx">
-      <DependentUpon>mstCatedratico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mstHorario.resx">
       <DependentUpon>mstHorario.vb</DependentUpon>
