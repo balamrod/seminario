@@ -33,7 +33,6 @@ Partial Class TrsAsignacion
         Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
@@ -46,24 +45,23 @@ Partial Class TrsAsignacion
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.btnCopiarAsignacion = New System.Windows.Forms.Button()
-        Me.dgvCursosPorAsignar = New System.Windows.Forms.DataGridView()
-        Me.dgvCursosDisponibles = New System.Windows.Forms.DataGridView()
+        Me.dgv2 = New System.Windows.Forms.DataGridView()
+        Me.dgv1 = New System.Windows.Forms.DataGridView()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.chkOk = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.dgvCursosPorAsignar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvCursosDisponibles, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button3
         '
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(346, 449)
+        Me.Button3.Location = New System.Drawing.Point(440, 582)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(82, 40)
         Me.Button3.TabIndex = 5
@@ -73,9 +71,9 @@ Partial Class TrsAsignacion
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(25, 332)
+        Me.GroupBox2.Location = New System.Drawing.Point(49, 465)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(505, 111)
+        Me.GroupBox2.Size = New System.Drawing.Size(595, 111)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Historial Asignaciones"
@@ -86,7 +84,7 @@ Partial Class TrsAsignacion
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.codigo, Me.Ciclo, Me.InscritoPor, Me.Descripción})
         Me.DataGridView1.Location = New System.Drawing.Point(11, 19)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(488, 132)
+        Me.DataGridView1.Size = New System.Drawing.Size(584, 132)
         Me.DataGridView1.TabIndex = 3
         '
         'Nombre
@@ -117,7 +115,6 @@ Partial Class TrsAsignacion
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Button8)
-        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.TextBox8)
         Me.GroupBox1.Controls.Add(Me.TextBox6)
@@ -139,20 +136,11 @@ Partial Class TrsAsignacion
         'Button8
         '
         Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
-        Me.Button8.Location = New System.Drawing.Point(468, 21)
+        Me.Button8.Location = New System.Drawing.Point(437, 21)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(25, 26)
         Me.Button8.TabIndex = 3
         Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(437, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(25, 26)
-        Me.Button1.TabIndex = 3
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
@@ -242,73 +230,60 @@ Partial Class TrsAsignacion
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Button5)
-        Me.GroupBox3.Controls.Add(Me.btnCopiarAsignacion)
-        Me.GroupBox3.Controls.Add(Me.dgvCursosPorAsignar)
-        Me.GroupBox3.Controls.Add(Me.dgvCursosDisponibles)
+        Me.GroupBox3.Controls.Add(Me.dgv2)
+        Me.GroupBox3.Controls.Add(Me.dgv1)
         Me.GroupBox3.Location = New System.Drawing.Point(25, 167)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(834, 159)
+        Me.GroupBox3.Size = New System.Drawing.Size(666, 292)
         Me.GroupBox3.TabIndex = 8
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Cursos Disponibles"
         '
-        'Button5
+        'dgv2
         '
-        Me.Button5.Location = New System.Drawing.Point(383, 95)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(36, 23)
-        Me.Button5.TabIndex = 1
-        Me.Button5.Text = "<"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.dgv2.AllowUserToAddRows = False
+        Me.dgv2.AllowUserToDeleteRows = False
+        Me.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv2.Location = New System.Drawing.Point(18, 167)
+        Me.dgv2.Name = "dgv2"
+        Me.dgv2.ReadOnly = True
+        Me.dgv2.Size = New System.Drawing.Size(601, 107)
+        Me.dgv2.TabIndex = 0
         '
-        'btnCopiarAsignacion
+        'dgv1
         '
-        Me.btnCopiarAsignacion.Location = New System.Drawing.Point(383, 66)
-        Me.btnCopiarAsignacion.Name = "btnCopiarAsignacion"
-        Me.btnCopiarAsignacion.Size = New System.Drawing.Size(36, 23)
-        Me.btnCopiarAsignacion.TabIndex = 1
-        Me.btnCopiarAsignacion.Text = ">"
-        Me.btnCopiarAsignacion.UseVisualStyleBackColor = True
-        '
-        'dgvCursosPorAsignar
-        '
-        Me.dgvCursosPorAsignar.AllowUserToAddRows = False
-        Me.dgvCursosPorAsignar.AllowUserToDeleteRows = False
-        Me.dgvCursosPorAsignar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCursosPorAsignar.Location = New System.Drawing.Point(437, 36)
-        Me.dgvCursosPorAsignar.Name = "dgvCursosPorAsignar"
-        Me.dgvCursosPorAsignar.ReadOnly = True
-        Me.dgvCursosPorAsignar.Size = New System.Drawing.Size(359, 107)
-        Me.dgvCursosPorAsignar.TabIndex = 0
-        '
-        'dgvCursosDisponibles
-        '
-        Me.dgvCursosDisponibles.AllowUserToAddRows = False
-        Me.dgvCursosDisponibles.AllowUserToDeleteRows = False
-        Me.dgvCursosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCursosDisponibles.Location = New System.Drawing.Point(11, 36)
-        Me.dgvCursosDisponibles.Name = "dgvCursosDisponibles"
-        Me.dgvCursosDisponibles.ReadOnly = True
-        Me.dgvCursosDisponibles.Size = New System.Drawing.Size(366, 107)
-        Me.dgvCursosDisponibles.TabIndex = 0
+        Me.dgv1.AllowUserToAddRows = False
+        Me.dgv1.AllowUserToDeleteRows = False
+        Me.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.chkOk})
+        Me.dgv1.Location = New System.Drawing.Point(18, 34)
+        Me.dgv1.Name = "dgv1"
+        Me.dgv1.ReadOnly = True
+        Me.dgv1.Size = New System.Drawing.Size(601, 107)
+        Me.dgv1.TabIndex = 0
         '
         'Button7
         '
         Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(434, 449)
+        Me.Button7.Location = New System.Drawing.Point(528, 582)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(90, 40)
         Me.Button7.TabIndex = 5
         Me.Button7.Text = "          Generar"
         Me.Button7.UseVisualStyleBackColor = True
         '
+        'chkOk
+        '
+        Me.chkOk.HeaderText = ""
+        Me.chkOk.Name = "chkOk"
+        Me.chkOk.ReadOnly = True
+        '
         'TrsAsignacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(885, 501)
+        Me.ClientSize = New System.Drawing.Size(712, 627)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button3)
@@ -322,8 +297,8 @@ Partial Class TrsAsignacion
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
-        CType(Me.dgvCursosPorAsignar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvCursosDisponibles, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -331,7 +306,6 @@ Partial Class TrsAsignacion
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
@@ -349,10 +323,9 @@ Partial Class TrsAsignacion
     Friend WithEvents InscritoPor As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Descripción As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents dgvCursosDisponibles As System.Windows.Forms.DataGridView
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents btnCopiarAsignacion As System.Windows.Forms.Button
-    Friend WithEvents dgvCursosPorAsignar As System.Windows.Forms.DataGridView
+    Friend WithEvents dgv1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgv2 As System.Windows.Forms.DataGridView
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents chkOk As System.Windows.Forms.DataGridViewCheckBoxColumn
 End Class

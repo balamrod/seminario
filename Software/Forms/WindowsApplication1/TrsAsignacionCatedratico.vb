@@ -42,10 +42,16 @@ Public Class TrsAsignacionCatedratico
         VaciarCombos(cbAnio)
 
         If cbCatedra.Text <> "" And cbCatedra.Text <> "No Datos" Then
-            Dim DsAnio As DataSet = ExecuteQuery("select anio from seccion where catedra_id_catedra = '" & cbCatedra.SelectedValue & "'  group by anio ")
-            FillComboBox(cbAnio, DsAnio, "anio", "anio")
+            Try
+                Dim DsAnio As DataSet = ExecuteQuery("select id_seccion as id , anio from seccion where catedra_id_catedra = '" & cbCatedra.SelectedValue & "' group by anio ")
+                FillComboBox(cbAnio, DsAnio, "id", "anio")
+            Catch ex As Exception
+
+            End Try
+           
         Else
             cbAnio.Items.Add("No Datos")
+            cbAnio.SelectedIndex = 0
         End If
 
         llenarSeccion()
@@ -60,6 +66,7 @@ Public Class TrsAsignacionCatedratico
             FillComboBox(cbCiclo, DsCiclo, "ciclo_anual", "ciclo_anual")
         Else
             cbCiclo.Items.Add("No Datos")
+            cbCiclo.SelectedIndex = 0
         End If
 
         llenarSeccion()
@@ -68,12 +75,12 @@ Public Class TrsAsignacionCatedratico
 
     Private Sub llenarCatedra()
         VaciarCombos(cbCatedra)
+        
 
-        Dim DsCatedra As DataSet = ExecuteQuery("select id_catedra as id, nombre from catedra where pensum_id_pensum = '" & cbPensum.SelectedValue & "'")
-        FillComboBox(cbCatedra, DsCatedra, "id", "nombre")
-        'aqui me quedes
-        If cbPensum.Text = "" And cbJornada.Text = "" Then
-            VaciarCombos(cbCatedra)
+        If cbPensum.Text <> "" And cbJornada.Text <> "" And cbPensum.Text <> "No Datos" And cbJornada.Text <> "No Datos" Then
+            Dim DsCatedra As DataSet = ExecuteQuery("select id_catedra as id, nombre from catedra where pensum_id_pensum = '" & cbPensum.SelectedValue & "'")
+            FillComboBox(cbCatedra, DsCatedra, "id", "nombre")
+        Else
             cbCatedra.Items.Add("No Datos")
             cbCatedra.SelectedIndex = 0
         End If
@@ -145,13 +152,46 @@ Public Class TrsAsignacionCatedratico
         End If
     End Sub
 
+    Private Sub cbJornada_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbJornada.SelectedIndexChanged
+        If IngresaraCombo Then
+            llenarCatedra()
+        End If
+    End Sub
+
+    Private Sub cbPensum_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPensum.SelectedIndexChanged
+        If IngresaraCombo Then
+            llenarCatedra()
+        End If
+    End Sub
+
+    Private Sub cbCatedra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCatedra.SelectedIndexChanged
+        If IngresaraCombo Then
+            llenarAnioSeccion()
+            llenarCicloSeccion()
+        End If
+    End Sub
+
+    Private Sub cbAnio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAnio.SelectedIndexChanged
+        If IngresaraCombo Then
+            llenarSeccion()
+        End If
+    End Sub
+
+    Private Sub cbCiclo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCiclo.SelectedIndexChanged
+        If IngresaraCombo Then
+            llenarSeccion()
+        End If
+    End Sub
+
     Public Sub VaciarCombos(cb As ComboBox)
-        cb.DataSource = Nothing
-        cb.Items.Clear()
+        If IngresaraCombo Then
+            cb.DataSource = Nothing
+            cb.Items.Clear()
+        End If
     End Sub
 
     Private Sub actualizarGrid()
-        Dim sActualizarGrid As String = "select emp.nombres as catedratico, sal.nombre as salon,s.nombre as seccion,concat(h.hora_inicial, ' - ', h.hora_final) as horario, id_asignacion_catedratico, empleado_id_empleado,salon_id_salon,horario_id_horario,seccion_id_seccion  from empleado emp  " +
+        Dim sActualizarGrid As String = "select concat(emp.nombres,' ', emp.apellidos) as catedratico, sal.nombre as salon,s.nombre as seccion,concat(h.hora_inicial, ' - ', h.hora_final) as horario, id_asignacion_catedratico, empleado_id_empleado,salon_id_salon,horario_id_horario,seccion_id_seccion  from empleado emp  " +
                                    "	inner join detalle_seccion ds on emp.id_empleado = ds.empleado_id_empleado " +
                                    "	inner join salon sal on sal.id_salon = ds.salon_id_salon " +
                                    "	inner join horario h on h.id_horario = ds.horario_id_horario " +
@@ -221,4 +261,5 @@ Public Class TrsAsignacionCatedratico
         cbSalon.SelectedValue = GetItem(dgvCatedras, "salon_id_salon")
         cbCatedratico.SelectedValue = GetItem(dgvCatedras, "empleado_id_empleado")
     End Sub
+    
 End Class

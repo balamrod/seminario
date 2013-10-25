@@ -25,13 +25,14 @@ Partial Class TrsAsignacionCatedratico
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TrsAsignacionCatedratico))
         Me.dgvCatedras = New System.Windows.Forms.DataGridView()
         Me.gbIngresoDatos = New System.Windows.Forms.GroupBox()
+        Me.pnlBotones = New System.Windows.Forms.Panel()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnAniadir = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.cbSeccion = New System.Windows.Forms.ComboBox()
         Me.cbSalon = New System.Windows.Forms.ComboBox()
         Me.cbHorario = New System.Windows.Forms.ComboBox()
         Me.cbCatedratico = New System.Windows.Forms.ComboBox()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnAniadir = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -49,11 +50,10 @@ Partial Class TrsAsignacionCatedratico
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.pnlBotones = New System.Windows.Forms.Panel()
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
-        Me.bgBusquedaCatedra.SuspendLayout()
         Me.pnlBotones.SuspendLayout()
+        Me.bgBusquedaCatedra.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvCatedras
@@ -84,6 +84,44 @@ Partial Class TrsAsignacionCatedratico
         Me.gbIngresoDatos.TabIndex = 17
         Me.gbIngresoDatos.TabStop = False
         Me.gbIngresoDatos.Text = "Asignacion de Catedratico para la Catedra "
+        '
+        'pnlBotones
+        '
+        Me.pnlBotones.Controls.Add(Me.btnEliminar)
+        Me.pnlBotones.Controls.Add(Me.btnAniadir)
+        Me.pnlBotones.Controls.Add(Me.btnModificar)
+        Me.pnlBotones.Location = New System.Drawing.Point(384, 13)
+        Me.pnlBotones.Name = "pnlBotones"
+        Me.pnlBotones.Size = New System.Drawing.Size(130, 42)
+        Me.pnlBotones.TabIndex = 12
+        Me.pnlBotones.Visible = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
+        Me.btnEliminar.Location = New System.Drawing.Point(48, 3)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(36, 36)
+        Me.btnEliminar.TabIndex = 8
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnAniadir
+        '
+        Me.btnAniadir.Image = CType(resources.GetObject("btnAniadir.Image"), System.Drawing.Image)
+        Me.btnAniadir.Location = New System.Drawing.Point(6, 3)
+        Me.btnAniadir.Name = "btnAniadir"
+        Me.btnAniadir.Size = New System.Drawing.Size(36, 36)
+        Me.btnAniadir.TabIndex = 7
+        Me.btnAniadir.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
+        Me.btnModificar.Location = New System.Drawing.Point(90, 3)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(36, 36)
+        Me.btnModificar.TabIndex = 9
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'cbSeccion
         '
@@ -116,33 +154,6 @@ Partial Class TrsAsignacionCatedratico
         Me.cbCatedratico.Name = "cbCatedratico"
         Me.cbCatedratico.Size = New System.Drawing.Size(295, 21)
         Me.cbCatedratico.TabIndex = 10
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(90, 3)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(36, 36)
-        Me.btnModificar.TabIndex = 9
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
-        Me.btnEliminar.Location = New System.Drawing.Point(48, 3)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(36, 36)
-        Me.btnEliminar.TabIndex = 8
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'btnAniadir
-        '
-        Me.btnAniadir.Image = CType(resources.GetObject("btnAniadir.Image"), System.Drawing.Image)
-        Me.btnAniadir.Location = New System.Drawing.Point(6, 3)
-        Me.btnAniadir.Name = "btnAniadir"
-        Me.btnAniadir.Size = New System.Drawing.Size(36, 36)
-        Me.btnAniadir.TabIndex = 7
-        Me.btnAniadir.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -303,17 +314,6 @@ Partial Class TrsAsignacionCatedratico
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Catedra:"
         '
-        'pnlBotones
-        '
-        Me.pnlBotones.Controls.Add(Me.btnEliminar)
-        Me.pnlBotones.Controls.Add(Me.btnAniadir)
-        Me.pnlBotones.Controls.Add(Me.btnModificar)
-        Me.pnlBotones.Location = New System.Drawing.Point(384, 13)
-        Me.pnlBotones.Name = "pnlBotones"
-        Me.pnlBotones.Size = New System.Drawing.Size(130, 42)
-        Me.pnlBotones.TabIndex = 12
-        Me.pnlBotones.Visible = False
-        '
         'TrsAsignacionCatedratico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -328,9 +328,9 @@ Partial Class TrsAsignacionCatedratico
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
         Me.gbIngresoDatos.PerformLayout()
+        Me.pnlBotones.ResumeLayout(False)
         Me.bgBusquedaCatedra.ResumeLayout(False)
         Me.bgBusquedaCatedra.PerformLayout()
-        Me.pnlBotones.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
