@@ -82,7 +82,7 @@ Partial Class TrsInscripcion
         'cbCiclo
         '
         Me.cbCiclo.FormattingEnabled = True
-        Me.cbCiclo.Items.AddRange(New Object() {"1ro.", "2do.", "3ro."})
+        Me.cbCiclo.Items.AddRange(New Object() {"1", "2", "3"})
         Me.cbCiclo.Location = New System.Drawing.Point(359, 50)
         Me.cbCiclo.Name = "cbCiclo"
         Me.cbCiclo.Size = New System.Drawing.Size(97, 21)

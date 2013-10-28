@@ -9,6 +9,7 @@ Public Class TrsAsignacionCatedratico
     Dim IngresaraCombo As Boolean = False
     Dim VectorTxt(4) As TextBox
     Dim iId As String
+    Dim temp As String
 #End Region
 
     Private Sub llenarDatosAsignacion()
@@ -28,9 +29,20 @@ Public Class TrsAsignacionCatedratico
             VaciarCombos(cbSeccion)
             Dim DsSeccion As DataSet = ExecuteQuery("select id_seccion as id, nombre from seccion where catedra_id_catedra = '" & cbCatedra.SelectedValue & "' and anio = " & cbAnio.Text & " and ciclo_anual = '" & cbCiclo.Text & "'")
             FillComboBox(cbSeccion, DsSeccion, "id", "nombre")
-            cbSeccion.Enabled = True
-            actualizarGrid()
-            pnlBotones.Visible = True
+
+
+            If cbSeccion.Text <> "" And cbSeccion.Text <> "No Datos" Then
+                cbSeccion.Enabled = True
+                pnlBotones.Visible = True
+                actualizarGrid()
+            Else
+                VaciarCombos(cbSeccion)
+                cbSeccion.Items.Add("No Datos")
+                cbSeccion.SelectedIndex = 0
+                pnlBotones.Visible = False
+                cbSeccion.Enabled = False
+            End If
+
         Else
             cbSeccion.Enabled = False
             pnlBotones.Visible = False
@@ -78,15 +90,25 @@ Public Class TrsAsignacionCatedratico
         
 
         If cbPensum.Text <> "" And cbJornada.Text <> "" And cbPensum.Text <> "No Datos" And cbJornada.Text <> "No Datos" Then
-            Dim DsCatedra As DataSet = ExecuteQuery("select id_catedra as id, nombre from catedra where pensum_id_pensum = '" & cbPensum.SelectedValue & "'")
+            Dim DsCatedra As DataSet = ExecuteQuery("select id_catedra as id, concat(cic.nombre,' - ',c.nombre) as nombre from catedra c inner join detalle_catedra s on s.catedra_id_catedra = c.id_catedra" +
+                                                         " inner join ciclo cic on s.ciclo_id_ciclo = cic.id_ciclo where pensum_id_pensum = '" & cbPensum.SelectedValue & "' order by cic.nombre")
             FillComboBox(cbCatedra, DsCatedra, "id", "nombre")
+            If cbCatedra.Text <> "" And cbCatedra.Text <> "No Datos" Then
+                'pnlBotones.Visible = True
+
+            Else
+                VaciarCombos(cbCatedra)
+                cbCatedra.Items.Add("No Datos")
+                cbCatedra.SelectedIndex = 0
+                'pnlBotones.Visible = False
+            End If
         Else
             cbCatedra.Items.Add("No Datos")
             cbCatedra.SelectedIndex = 0
         End If
 
-        llenarAnioSeccion()
-        llenarCicloSeccion()
+        'llenarAnioSeccion()
+        'llenarCicloSeccion()
     End Sub
 
     Private Sub llenarJornada()
@@ -138,8 +160,8 @@ Public Class TrsAsignacionCatedratico
         llenarDatosAsignacion()
 
         IngresaraCombo = True
-
-        actualizarGrid()
+        cbAnio.SelectedText = Year(Now)
+        cbCiclo.SelectedIndex = 1
 
     End Sub
 
@@ -166,20 +188,20 @@ Public Class TrsAsignacionCatedratico
 
     Private Sub cbCatedra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCatedra.SelectedIndexChanged
         If IngresaraCombo Then
-            llenarAnioSeccion()
-            llenarCicloSeccion()
+            ' llenarAnioSeccion()
+            ' llenarCicloSeccion()
         End If
     End Sub
 
     Private Sub cbAnio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAnio.SelectedIndexChanged
         If IngresaraCombo Then
-            llenarSeccion()
+            'llenarSeccion()
         End If
     End Sub
 
     Private Sub cbCiclo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCiclo.SelectedIndexChanged
         If IngresaraCombo Then
-            llenarSeccion()
+            ' llenarSeccion()
         End If
     End Sub
 
@@ -191,12 +213,12 @@ Public Class TrsAsignacionCatedratico
     End Sub
 
     Private Sub actualizarGrid()
-        Dim sActualizarGrid As String = "select concat(emp.nombres,' ', emp.apellidos) as catedratico, sal.nombre as salon,s.nombre as seccion,concat(h.hora_inicial, ' - ', h.hora_final) as horario, id_asignacion_catedratico, empleado_id_empleado,salon_id_salon,horario_id_horario,seccion_id_seccion  from empleado emp  " +
+        Dim sActualizarGrid As String = "select concat(emp.nombres,' ', emp.apellidos) as catedratico, sal.nombre as salon,s.nombre as seccion,concat(h.hora_inicial, ' - ', h.hora_final) as horario, id_asignacion_catedratico, empleado_id_empleado,salon_id_salon,horario_id_horario,seccion_id_seccion, s.anio  from empleado emp  " +
                                    "	inner join detalle_seccion ds on emp.id_empleado = ds.empleado_id_empleado " +
                                    "	inner join salon sal on sal.id_salon = ds.salon_id_salon " +
                                    "	inner join horario h on h.id_horario = ds.horario_id_horario " +
                                    "	inner join seccion s on s.id_seccion = ds.seccion_id_seccion " +
-                                   "where s.catedra_id_catedra = '" + cbCatedra.SelectedValue + "' and s.ciclo_anual = '" + cbCiclo.SelectedValue + "' and s.anio  = '" + cbAnio.SelectedValue + "'" +
+                                   "where s.catedra_id_catedra = '" + cbCatedra.SelectedValue + "' and s.ciclo_anual = '" + cbCiclo.Text + "' and s.anio  = '" + temp + "'" +
                                    "order by s.anio desc "
 
         FillDataGridView(dgvCatedras, ExecuteQuery(sActualizarGrid))
@@ -262,4 +284,8 @@ Public Class TrsAsignacionCatedratico
         cbCatedratico.SelectedValue = GetItem(dgvCatedras, "empleado_id_empleado")
     End Sub
     
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        temp = cbAnio.Text
+        llenarSeccion()
+    End Sub
 End Class

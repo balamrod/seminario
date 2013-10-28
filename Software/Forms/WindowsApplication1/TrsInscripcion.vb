@@ -10,6 +10,8 @@ Public Class TrsInscripcion
     Dim iId As String
     Dim sActualizarGrid As String
     Dim DsAlumno As DataSet
+    Dim ins As String
+    Dim anio As String
 #End Region
 
     Private Sub LlenarTextBox()
@@ -68,7 +70,7 @@ Public Class TrsInscripcion
                 txtContrato.Text = "U-" & Convert.ToInt16(txtCodCarrera.Text) & Convert.ToInt16(txtCodAnio.Text) & Convert.ToInt16(txtCorrelativo.Text) & cbCiclo.Text(0)
                 lblError.Visible = False
 
-
+                btnGuardar.Visible = True
                 FillDataGridView(dvgHistorialInscripciones, ExecuteQuery(sActualizarGrid))
             End If
         End If
@@ -83,7 +85,9 @@ Public Class TrsInscripcion
                 FillDataGridView(dvgHistorialInscripciones, ExecuteQuery(sActualizarGrid))
                 LimpiarTxtBox(Me)
             End If
-
+            ins = VectorTxt(8).Text
+            anio = VectorTxt(3).Text
+            btnGuardar.Visible = False
         Else
             lblError.Visible = True
             lblError.Text = "El Alumno ya se encuentra inscrito en este ciclo"
@@ -99,4 +103,15 @@ Public Class TrsInscripcion
     Private Sub TrsInscripcion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbCiclo.SelectedIndex = 0
     End Sub
+
+    Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
+
+        Using frm As New TrsAsignacion
+            frm.inscripcion = ins
+            frm.anio = Year(Now)
+            frm.ShowDialog()
+        End Using
+
+    End Sub
+    
 End Class

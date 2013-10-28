@@ -1,8 +1,8 @@
-var page = "https://www.tomsplanner.com/public/seminario/";
+var page = "actualizacion.aspx";
 
 $(document).ready(function () {
     $('#popup').click(function() {
-        var $dialog = $('<div ></div>')
+        var $dialog = $('<div ><button id="create-user">Create new user</button></div>')
                .html('<iframe style="border: 0px; " src="' + page + '" width="100%" height="100%"></iframe>')
                .dialog({
                    autoOpen: false,

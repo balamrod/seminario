@@ -18,6 +18,20 @@ Public Class clsHelperSQL
         End Try
         Return dsData
     End Function
+
+    Public Shared Function ExecuteQueryDt(ByVal sSQL As String) As DataTable
+        Dim dsData As New DataTable
+        Dim cmd As New MySqlCommand(sSQL, clsConexion.Cnn())
+        Try
+            cmd.CommandType = CommandType.Text
+            Dim objAdapter As New MySqlDataAdapter(cmd)
+            dsData.Locale = System.Globalization.CultureInfo.InvariantCulture
+            objAdapter.Fill(dsData)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return dsData
+    End Function
 #End Region
 #Region "Insert, Update, Delete"
     Public Shared Function ExecuteProcedure(ByVal sSQL As String) As String
