@@ -50,12 +50,12 @@ Partial Class mstIngresoNotas
         gvNotas.Columns.Add(ButtonField)
 
 
-        Dim sNotas As String = "select al.nombres,asig.inscripcion_id_inscripcion, asig.id_asignacion_catedratico, " +
+        Dim sNotas As String = "select al.nombres, " +
                                 "	(select punteo from actividad act, tipo_actividad ta   where act.asignacion_id_asignacion_catedratico  = asig.id_asignacion_catedratico and act.asignacion_inscripcion_id_inscripcion = asig.inscripcion_id_inscripcion and ta.id_tipo_actividad = act.tipo_actividad_id_tipo_actividad and ta.nombre = '1') as '1er parcial', " +
                                     "(select punteo from actividad act, tipo_actividad ta   where act.asignacion_id_asignacion_catedratico  = asig.id_asignacion_catedratico and act.asignacion_inscripcion_id_inscripcion = asig.inscripcion_id_inscripcion and ta.id_tipo_actividad = act.tipo_actividad_id_tipo_actividad and ta.nombre = '2') as '2do parcial', " +
                                     "(select punteo from actividad act, tipo_actividad ta   where act.asignacion_id_asignacion_catedratico  = asig.id_asignacion_catedratico and act.asignacion_inscripcion_id_inscripcion = asig.inscripcion_id_inscripcion and ta.id_tipo_actividad = act.tipo_actividad_id_tipo_actividad and ta.nombre = '3') as 'Zona', " +
                                     "(select punteo from actividad act, tipo_actividad ta   where act.asignacion_id_asignacion_catedratico  = asig.id_asignacion_catedratico and act.asignacion_inscripcion_id_inscripcion = asig.inscripcion_id_inscripcion and ta.id_tipo_actividad = act.tipo_actividad_id_tipo_actividad and ta.nombre = '4') as 'Final', " +
-                                    "asig.notafinal as 'Nota final' from asignacion asig " +
+                                    "asig.notafinal as 'Nota final',asig.inscripcion_id_inscripcion as id1, asig.id_asignacion_catedratico as id2 from asignacion asig " +
                                     "inner join inscripcion ins  on asig.inscripcion_id_inscripcion = ins.id_inscripcion " +
                                     "inner join alumno al on ins.anio_carnet = al.anio_carnet and ins.id_carrera = al.id_carrera " +
                                     "	and ins.numero_carnet = al.correlativo_carnet " +
@@ -99,15 +99,22 @@ Partial Class mstIngresoNotas
 
     Protected Sub gvNotas_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvNotas.RowCommand
         If e.CommandName = "testing" Then
-            txt4.Text = "0"
-            txt3.Text = "0"
-            txt2.Text = "0"
-            txt1.Text = "0"
+
             Dim index As Integer = Convert.ToInt32(e.CommandArgument)
             Dim row As GridViewRow = gvNotas.Rows(index)
 
-            inscripcion = row.Cells(2).Text
-            asignacion = row.Cells(3).Text
+            'txt4.Text = Server.HtmlDecode(row.Cells(5).Text).ToString
+            'txt3.Text = Server.HtmlDecode(row.Cells(4).Text).ToString
+            'txt2.Text = Server.HtmlDecode(row.Cells(3).Text).ToString
+            'txt1.Text = Server.HtmlDecode(row.Cells(2).Text).ToString
+
+            txt1.Text = "0"
+            txt2.Text = "0"
+            txt3.Text = "0"
+            txt4.Text = "0"
+
+            inscripcion = row.Cells(7).Text
+            asignacion = row.Cells(8).Text
 
             mpeUserDetail.Show()
 
@@ -119,7 +126,7 @@ Partial Class mstIngresoNotas
     Protected Sub btnGuardar_Click1(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Dim Script As String
-        Dim notaFinal As Int16 = Convert.ToInt16(txt1.Text) + Convert.ToInt16(txt2.Text) + Convert.ToInt16(txt3.Text) + Convert.ToInt16(txt4.Text)
+        Dim notaFinal As Int16 = Convert.ToInt16(txt1.Text.ToString) + Convert.ToInt16(txt2.Text.ToString) + Convert.ToInt16(txt3.Text.ToString) + Convert.ToInt16(txt4.Text.ToString)
         Dim sActualizarActividad As String = " update actividad set punteo = " + txt1.Text + " where asignacion_id_asignacion_catedratico = '" + asignacion + "' and asignacion_inscripcion_id_inscripcion = '" + inscripcion + "' and tipo_actividad_id_tipo_actividad = 'C7ED6B4A-380D-44A5-9972-7329EAE3AD24';" +
                                              " update actividad set punteo = " + txt2.Text + " where asignacion_id_asignacion_catedratico = '" + asignacion + "' and asignacion_inscripcion_id_inscripcion = '" + inscripcion + "' and tipo_actividad_id_tipo_actividad = 'DF77F9F8-51AF-43A0-83B0-AE171BC68137';" +
                                             " update actividad set punteo = " + txt3.Text + " where asignacion_id_asignacion_catedratico = '" + asignacion + "' and asignacion_inscripcion_id_inscripcion = '" + inscripcion + "' and tipo_actividad_id_tipo_actividad = '480FAD54-D66A-46BF-B677-24386135AB9B';" +
@@ -144,5 +151,12 @@ Partial Class mstIngresoNotas
 
     Protected Sub btnsalir_Click1(sender As Object, e As EventArgs) Handles btnsalir.Click
         mpeUserDetail.Hide()
+    End Sub
+
+    Protected Sub gvNotas_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvNotas.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            e.Row.Cells(7).Visible = False
+            e.Row.Cells(8).Visible = False
+        End If
     End Sub
 End Class

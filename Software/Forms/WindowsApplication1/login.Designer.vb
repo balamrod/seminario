@@ -23,24 +23,26 @@ Partial Class login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtusuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.txtPass = New System.Windows.Forms.TextBox()
+        Me.btnAutenticar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'txtusuario
         '
-        Me.TextBox1.Location = New System.Drawing.Point(103, 28)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(150, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.txtusuario.Location = New System.Drawing.Point(112, 123)
+        Me.txtusuario.Name = "txtusuario"
+        Me.txtusuario.Size = New System.Drawing.Size(150, 20)
+        Me.txtusuario.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 31)
+        Me.Label1.Location = New System.Drawing.Point(40, 126)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 4
@@ -49,50 +51,66 @@ Partial Class login
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 62)
+        Me.Label2.Location = New System.Drawing.Point(40, 157)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 13)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Constraseña:"
         '
-        'TextBox2
+        'txtPass
         '
-        Me.TextBox2.Location = New System.Drawing.Point(103, 59)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(150, 20)
-        Me.TextBox2.TabIndex = 5
+        Me.txtPass.Location = New System.Drawing.Point(112, 154)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPass.Size = New System.Drawing.Size(150, 20)
+        Me.txtPass.TabIndex = 2
+        Me.txtPass.UseSystemPasswordChar = True
         '
-        'Button2
+        'btnAutenticar
         '
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(94, 101)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(102, 40)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "           Autenticar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnAutenticar.Image = CType(resources.GetObject("btnAutenticar.Image"), System.Drawing.Image)
+        Me.btnAutenticar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAutenticar.Location = New System.Drawing.Point(103, 196)
+        Me.btnAutenticar.Name = "btnAutenticar"
+        Me.btnAutenticar.Size = New System.Drawing.Size(102, 40)
+        Me.btnAutenticar.TabIndex = 3
+        Me.btnAutenticar.Text = "           Autenticar"
+        Me.btnAutenticar.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(103, 28)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(92, 73)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
         '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(287, 153)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(287, 250)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnAutenticar)
+        Me.Controls.Add(Me.txtPass)
+        Me.Controls.Add(Me.txtusuario)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "login"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtusuario As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents txtPass As System.Windows.Forms.TextBox
+    Friend WithEvents btnAutenticar As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

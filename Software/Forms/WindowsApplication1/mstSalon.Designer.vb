@@ -22,6 +22,7 @@ Partial Class mstSalon
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mstSalon))
         Me.dgvSalon = New System.Windows.Forms.DataGridView()
         Me.gbIngresoDatos = New System.Windows.Forms.GroupBox()
@@ -35,6 +36,10 @@ Partial Class mstSalon
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.dgvSalon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
         Me.SuspendLayout()
@@ -93,9 +98,9 @@ Partial Class mstSalon
         Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLimpiar.Location = New System.Drawing.Point(21, 19)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(86, 36)
+        Me.btnLimpiar.Size = New System.Drawing.Size(44, 41)
         Me.btnLimpiar.TabIndex = 7
-        Me.btnLimpiar.Text = "          Limpiar"
+        Me.btnLimpiar.Text = "         "
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'btnAniadir
@@ -149,9 +154,9 @@ Partial Class mstSalon
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(18, 63)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 13)
+        Me.Label6.Size = New System.Drawing.Size(58, 13)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Cantidad"
+        Me.Label6.Text = "Capacidad"
         '
         'Label1
         '
@@ -171,6 +176,7 @@ Partial Class mstSalon
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mstSalon"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Salon"
         CType(Me.dgvSalon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
@@ -190,4 +196,8 @@ Partial Class mstSalon
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip4 As System.Windows.Forms.ToolTip
 End Class

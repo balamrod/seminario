@@ -22,6 +22,7 @@ Partial Class TrsAsignacionCatedratico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TrsAsignacionCatedratico))
         Me.dgvCatedras = New System.Windows.Forms.DataGridView()
         Me.gbIngresoDatos = New System.Windows.Forms.GroupBox()
@@ -40,18 +41,22 @@ Partial Class TrsAsignacionCatedratico
         Me.bgBusquedaCatedra = New System.Windows.Forms.GroupBox()
         Me.cbJornada = New System.Windows.Forms.ComboBox()
         Me.cbCarrera = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.cbPensum = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.cbCiclo = New System.Windows.Forms.ComboBox()
         Me.cbAnio = New System.Windows.Forms.ComboBox()
         Me.cbCatedra = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.cbPensum = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.gbSeccion = New System.Windows.Forms.GroupBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbIngresoDatos.SuspendLayout()
         Me.pnlBotones.SuspendLayout()
@@ -105,7 +110,7 @@ Partial Class TrsAsignacionCatedratico
         Me.btnEliminar.Location = New System.Drawing.Point(48, 3)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(36, 36)
-        Me.btnEliminar.TabIndex = 8
+        Me.btnEliminar.TabIndex = 13
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnAniadir
@@ -114,7 +119,7 @@ Partial Class TrsAsignacionCatedratico
         Me.btnAniadir.Location = New System.Drawing.Point(6, 3)
         Me.btnAniadir.Name = "btnAniadir"
         Me.btnAniadir.Size = New System.Drawing.Size(36, 36)
-        Me.btnAniadir.TabIndex = 7
+        Me.btnAniadir.TabIndex = 12
         Me.btnAniadir.UseVisualStyleBackColor = True
         '
         'btnModificar
@@ -123,7 +128,7 @@ Partial Class TrsAsignacionCatedratico
         Me.btnModificar.Location = New System.Drawing.Point(90, 3)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(36, 36)
-        Me.btnModificar.TabIndex = 9
+        Me.btnModificar.TabIndex = 14
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'cbSeccion
@@ -132,7 +137,7 @@ Partial Class TrsAsignacionCatedratico
         Me.cbSeccion.Location = New System.Drawing.Point(73, 61)
         Me.cbSeccion.Name = "cbSeccion"
         Me.cbSeccion.Size = New System.Drawing.Size(68, 21)
-        Me.cbSeccion.TabIndex = 11
+        Me.cbSeccion.TabIndex = 8
         Me.cbSeccion.Text = "No Datos"
         '
         'cbSalon
@@ -141,7 +146,7 @@ Partial Class TrsAsignacionCatedratico
         Me.cbSalon.Location = New System.Drawing.Point(73, 88)
         Me.cbSalon.Name = "cbSalon"
         Me.cbSalon.Size = New System.Drawing.Size(137, 21)
-        Me.cbSalon.TabIndex = 11
+        Me.cbSalon.TabIndex = 10
         '
         'cbHorario
         '
@@ -149,7 +154,7 @@ Partial Class TrsAsignacionCatedratico
         Me.cbHorario.Location = New System.Drawing.Point(263, 88)
         Me.cbHorario.Name = "cbHorario"
         Me.cbHorario.Size = New System.Drawing.Size(251, 21)
-        Me.cbHorario.TabIndex = 10
+        Me.cbHorario.TabIndex = 11
         '
         'cbCatedratico
         '
@@ -157,7 +162,7 @@ Partial Class TrsAsignacionCatedratico
         Me.cbCatedratico.Location = New System.Drawing.Point(219, 61)
         Me.cbCatedratico.Name = "cbCatedratico"
         Me.cbCatedratico.Size = New System.Drawing.Size(295, 21)
-        Me.cbCatedratico.TabIndex = 10
+        Me.cbCatedratico.TabIndex = 9
         '
         'Label2
         '
@@ -216,7 +221,7 @@ Partial Class TrsAsignacionCatedratico
         Me.cbJornada.Location = New System.Drawing.Point(263, 19)
         Me.cbJornada.Name = "cbJornada"
         Me.cbJornada.Size = New System.Drawing.Size(99, 21)
-        Me.cbJornada.TabIndex = 11
+        Me.cbJornada.TabIndex = 2
         '
         'cbCarrera
         '
@@ -224,33 +229,7 @@ Partial Class TrsAsignacionCatedratico
         Me.cbCarrera.Location = New System.Drawing.Point(66, 19)
         Me.cbCarrera.Name = "cbCarrera"
         Me.cbCarrera.Size = New System.Drawing.Size(137, 21)
-        Me.cbCarrera.TabIndex = 11
-        '
-        'cbCiclo
-        '
-        Me.cbCiclo.FormattingEnabled = True
-        Me.cbCiclo.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.cbCiclo.Location = New System.Drawing.Point(422, 19)
-        Me.cbCiclo.Name = "cbCiclo"
-        Me.cbCiclo.Size = New System.Drawing.Size(46, 21)
-        Me.cbCiclo.TabIndex = 11
-        '
-        'cbAnio
-        '
-        Me.cbAnio.FormattingEnabled = True
-        Me.cbAnio.Items.AddRange(New Object() {"2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"})
-        Me.cbAnio.Location = New System.Drawing.Point(260, 19)
-        Me.cbAnio.Name = "cbAnio"
-        Me.cbAnio.Size = New System.Drawing.Size(102, 21)
-        Me.cbAnio.TabIndex = 11
-        '
-        'cbCatedra
-        '
-        Me.cbCatedra.FormattingEnabled = True
-        Me.cbCatedra.Location = New System.Drawing.Point(66, 19)
-        Me.cbCatedra.Name = "cbCatedra"
-        Me.cbCatedra.Size = New System.Drawing.Size(137, 21)
-        Me.cbCatedra.TabIndex = 11
+        Me.cbCarrera.TabIndex = 1
         '
         'Label9
         '
@@ -267,16 +246,7 @@ Partial Class TrsAsignacionCatedratico
         Me.cbPensum.Location = New System.Drawing.Point(422, 19)
         Me.cbPensum.Name = "cbPensum"
         Me.cbPensum.Size = New System.Drawing.Size(92, 21)
-        Me.cbPensum.TabIndex = 10
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(368, 22)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(33, 13)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "Ciclo:"
+        Me.cbPensum.TabIndex = 3
         '
         'Label4
         '
@@ -287,15 +257,6 @@ Partial Class TrsAsignacionCatedratico
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Carrera:"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(209, 22)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(29, 13)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Año:"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -304,6 +265,50 @@ Partial Class TrsAsignacionCatedratico
         Me.Label5.Size = New System.Drawing.Size(48, 13)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Pensum:"
+        '
+        'cbCiclo
+        '
+        Me.cbCiclo.FormattingEnabled = True
+        Me.cbCiclo.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.cbCiclo.Location = New System.Drawing.Point(422, 19)
+        Me.cbCiclo.Name = "cbCiclo"
+        Me.cbCiclo.Size = New System.Drawing.Size(46, 21)
+        Me.cbCiclo.TabIndex = 6
+        '
+        'cbAnio
+        '
+        Me.cbAnio.FormattingEnabled = True
+        Me.cbAnio.Items.AddRange(New Object() {"2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"})
+        Me.cbAnio.Location = New System.Drawing.Point(260, 19)
+        Me.cbAnio.Name = "cbAnio"
+        Me.cbAnio.Size = New System.Drawing.Size(102, 21)
+        Me.cbAnio.TabIndex = 5
+        '
+        'cbCatedra
+        '
+        Me.cbCatedra.FormattingEnabled = True
+        Me.cbCatedra.Location = New System.Drawing.Point(66, 19)
+        Me.cbCatedra.Name = "cbCatedra"
+        Me.cbCatedra.Size = New System.Drawing.Size(137, 21)
+        Me.cbCatedra.TabIndex = 4
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(368, 22)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(33, 13)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Ciclo:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(209, 22)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(29, 13)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Año:"
         '
         'Label8
         '
@@ -336,7 +341,7 @@ Partial Class TrsAsignacionCatedratico
         Me.btnBuscar.Location = New System.Drawing.Point(485, 15)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(25, 26)
-        Me.btnBuscar.TabIndex = 10
+        Me.btnBuscar.TabIndex = 7
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'TrsAsignacionCatedratico
@@ -350,6 +355,7 @@ Partial Class TrsAsignacionCatedratico
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TrsAsignacionCatedratico"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asignacion Catedraticos"
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbIngresoDatos.ResumeLayout(False)
@@ -391,4 +397,8 @@ Partial Class TrsAsignacionCatedratico
     Friend WithEvents pnlBotones As System.Windows.Forms.Panel
     Friend WithEvents gbSeccion As System.Windows.Forms.GroupBox
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip4 As System.Windows.Forms.ToolTip
 End Class

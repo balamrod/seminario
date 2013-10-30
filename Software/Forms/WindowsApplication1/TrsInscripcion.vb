@@ -95,13 +95,25 @@ Public Class TrsInscripcion
     End Sub
 
     Private Sub cbCiclo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCiclo.SelectedIndexChanged
-        txtMatricula.Text = Convert.ToInt16(txtCodCarrera.Text) & Convert.ToInt16(txtCodAnio.Text) & Convert.ToInt16(txtCorrelativo.Text) & cbCiclo.Text(0)
-        txtContrato.Text = "U-" & Convert.ToInt16(txtCodCarrera.Text) & Convert.ToInt16(txtCodAnio.Text) & Convert.ToInt16(txtCorrelativo.Text) & cbCiclo.Text(0)
+        Try
+            txtMatricula.Text = Convert.ToInt16(txtCodCarrera.Text) & Convert.ToInt16(txtCodAnio.Text) & Convert.ToInt16(txtCorrelativo.Text) & cbCiclo.Text(0)
+            txtContrato.Text = "U-" & Convert.ToInt16(txtCodCarrera.Text) & Convert.ToInt16(txtCodAnio.Text) & Convert.ToInt16(txtCorrelativo.Text) & cbCiclo.Text(0)
+        Catch ex As Exception
+
+        End Try
+        
         lblError.Visible = False
     End Sub
+    Sub tip()
+        ToolTip1.SetToolTip(btnAniadir, "AÑADIR")
+        ToolTip2.SetToolTip(btnAsignar, "ASIGNAR")
+        ToolTip3.SetToolTip(btnBuscar, "BUSCAR")
+        ToolTip4.SetToolTip(btnGuardar, "GUARDAR")
 
+    End Sub
     Private Sub TrsInscripcion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbCiclo.SelectedIndex = 0
+        tip()
     End Sub
 
     Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
@@ -109,9 +121,24 @@ Public Class TrsInscripcion
         Using frm As New TrsAsignacion
             frm.inscripcion = ins
             frm.anio = Year(Now)
-            frm.ShowDialog()
+            frm.ShowDialog() ''deja interactuar entre pantallas
         End Using
 
     End Sub
     
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        'Dim ChildForm As New mstBusquedaAlumno
+       
+        'ChildForm.ShowDialog() ''congela pantalla
+        ' Me.txtCodCarrera.Text = ChildForm
+        ' Me.txtCodAnio.Text = 
+        ' Me.txtCorrelativo.Text
+
+        Using frm As New mstBusquedaAlumno
+            frm.ShowDialog()
+            Me.txtCodCarrera.Text = frm.carrera
+            Me.txtCodAnio.Text = frm.anio
+            Me.txtCorrelativo.Text = frm.correlativo
+        End Using
+    End Sub
 End Class

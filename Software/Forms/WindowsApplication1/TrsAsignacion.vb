@@ -18,7 +18,7 @@ Public Class TrsAsignacion
 
         For Each item As String In asignaciones
             If item <> "" Then
-                sAsigIndividual = "insert into asignacion() values ('" + FormatearFechaMysql(Now) + "','" + item + "','" + inscripcion + "');"
+                sAsigIndividual = "insert into asignacion() values ('" + FormatearFechaMysql(Now) + "','" + item + "','" + inscripcion + "','');"
                 sActividad = sActividad + "insert into actividad() values ('" + Guid.NewGuid.ToString + "','','','C7ED6B4A-380D-44A5-9972-7329EAE3AD24','" + item + "','" + inscripcion + "');" +
                                           "insert into actividad() values ('" + Guid.NewGuid.ToString + "','','','DF77F9F8-51AF-43A0-83B0-AE171BC68137','" + item + "','" + inscripcion + "');" +
                                           "insert into actividad() values ('" + Guid.NewGuid.ToString + "','','','480FAD54-D66A-46BF-B677-24386135AB9B','" + item + "','" + inscripcion + "');" +
@@ -136,7 +136,15 @@ Public Class TrsAsignacion
         txtAlumno.Text = GetItem(dsDatos, "nombre")
     End Sub
 
+    Sub tip()
+        ToolTip1.SetToolTip(btnBuscar, "BUSCAR")
+        ToolTip2.SetToolTip(btnAsignar, "ASIGNAR")
+        ToolTip3.SetToolTip(btnGenerar, "GENERAR")
+        
+    End Sub
     Private Sub TrsAsignacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tip()
+
         obtenerDatosAlumno()
 
         contruirGrid(dgv1, "2do.")
@@ -151,7 +159,7 @@ Public Class TrsAsignacion
         'MessageBox.Show("le dista a: " + e.ColumnIndex.ToString)
     End Sub
 
-    Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
         Dim array(5) As String
         Dim pcount As Integer = 0
 

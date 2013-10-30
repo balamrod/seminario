@@ -22,8 +22,9 @@ Partial Class TrsAsignacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TrsAsignacion))
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnAsignar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtAlumno = New System.Windows.Forms.TextBox()
@@ -47,8 +48,11 @@ Partial Class TrsAsignacion
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.dgv1 = New System.Windows.Forms.DataGridView()
         Me.chkOk = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.btnGenerar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.gbCursos.SuspendLayout()
         CType(Me.dgv5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,16 +63,16 @@ Partial Class TrsAsignacion
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button3
+        'btnAsignar
         '
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(330, 674)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(82, 40)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "          Asignar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnAsignar.Image = CType(resources.GetObject("btnAsignar.Image"), System.Drawing.Image)
+        Me.btnAsignar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAsignar.Location = New System.Drawing.Point(398, 671)
+        Me.btnAsignar.Name = "btnAsignar"
+        Me.btnAsignar.Size = New System.Drawing.Size(41, 40)
+        Me.btnAsignar.TabIndex = 5
+        Me.btnAsignar.Text = "        "
+        Me.btnAsignar.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -100,7 +104,7 @@ Partial Class TrsAsignacion
         Me.txtAlumno.Location = New System.Drawing.Point(201, 25)
         Me.txtAlumno.Name = "txtAlumno"
         Me.txtAlumno.Size = New System.Drawing.Size(230, 20)
-        Me.txtAlumno.TabIndex = 1
+        Me.txtAlumno.TabIndex = 2
         '
         'TextBox5
         '
@@ -285,16 +289,16 @@ Partial Class TrsAsignacion
         Me.chkOk.Name = "chkOk"
         Me.chkOk.ReadOnly = True
         '
-        'Button7
+        'btnGenerar
         '
-        Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(418, 674)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(90, 40)
-        Me.Button7.TabIndex = 5
-        Me.Button7.Text = "          Generar"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.btnGenerar.Image = CType(resources.GetObject("btnGenerar.Image"), System.Drawing.Image)
+        Me.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnGenerar.Location = New System.Drawing.Point(454, 671)
+        Me.btnGenerar.Name = "btnGenerar"
+        Me.btnGenerar.Size = New System.Drawing.Size(45, 40)
+        Me.btnGenerar.TabIndex = 5
+        Me.btnGenerar.Text = "       "
+        Me.btnGenerar.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -311,11 +315,12 @@ Partial Class TrsAsignacion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(531, 726)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnGenerar)
+        Me.Controls.Add(Me.btnAsignar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TrsAsignacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asignacion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -330,7 +335,7 @@ Partial Class TrsAsignacion
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btnAsignar As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents txtAlumno As System.Windows.Forms.TextBox
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
@@ -339,7 +344,7 @@ Partial Class TrsAsignacion
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents gbCursos As System.Windows.Forms.GroupBox
     Friend WithEvents dgv1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents btnGenerar As System.Windows.Forms.Button
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents chkOk As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents lblCiclo1 As System.Windows.Forms.Label
@@ -356,4 +361,7 @@ Partial Class TrsAsignacion
     Friend WithEvents DataGridViewCheckBoxColumn2 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents dgv2 As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
 End Class

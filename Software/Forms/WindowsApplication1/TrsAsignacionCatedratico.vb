@@ -154,7 +154,16 @@ Public Class TrsAsignacionCatedratico
         End If
     End Sub
 
+    Sub tip()
+        ToolTip1.SetToolTip(btnAniadir, "GUARDAR")
+        ToolTip2.SetToolTip(btnEliminar, "BORRAR")
+        ToolTip3.SetToolTip(btnModificar, "MODIFICAR")
+        ToolTip4.SetToolTip(btnBuscar, "BUSCAR")
+
+    End Sub
     Private Sub TrsAsignacionCatedratico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        tip()
 
         llenarCarrera()
         llenarDatosAsignacion()

@@ -78,15 +78,22 @@ Public Class TrsSeccion
             llenarJornada()
         End If
     End Sub
+    Sub tip()
+        ToolTip1.SetToolTip(btnAniadir, "GUARDAR")
+        ToolTip2.SetToolTip(btnEliminar, "BORRAR")
+        ToolTip3.SetToolTip(btnModificar, "MODIFICAR")
 
+
+    End Sub
     Private Sub TrsAsignacionCatedratico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tip()
         cbAnio.SelectedText = Year(Now)
         llenarCarrera()
         IngresaraCombo = True
         actualizarGrid()
         LimpiarTxtBox(Me)
 
-       
+
     End Sub
 
     Private Sub cbCarrera_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCarrera.SelectedIndexChanged
@@ -146,10 +153,8 @@ Public Class TrsSeccion
             VectorTxt(4).Text = iId
         End If
 
-        Dim sd As String = "select ciclo_id_ciclo, c.nombre from seccion s " +
-                            "	inner join ciclo c on c.id_ciclo = s.ciclo_id_ciclo " +
-                            "where s.catedra_id_catedra = '" + cbCatedra.SelectedValue +
-                            "' and c.jornada_id_jornada = '" + cbJornada.SelectedValue + "'"
+        Dim sd As String = "select ciclo_id_ciclo from detalle_catedra where catedra_id_catedra =  '" + cbCatedra.SelectedValue + "'"
+
 
         Dim DsObtener As DataSet = ExecuteQuery(sd)
         VectorTxt(5) = New TextBox

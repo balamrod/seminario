@@ -8,6 +8,7 @@ Public Class mstSalon
 #Region "variables"
     Dim iId As String
     Dim VectorTxt(3) As TextBox
+    Dim ActualizarGrid As String = "select id_salon as 'Id Salon', nombre as 'Nombre', capacidad as 'Capacidad', observacion as 'Observacion' from salon"
 #End Region
 
     Private Sub LlenarTextBox(incluirID As Boolean)
@@ -24,19 +25,26 @@ Public Class mstSalon
         End If
 
     End Sub
+    Sub tip()
+        ToolTip1.SetToolTip(btnAniadir, "GUARDAR")
+        ToolTip2.SetToolTip(btnEliminar, "BORRAR")
+        ToolTip3.SetToolTip(btnModificar, "MODIFICAR")
+        ToolTip4.SetToolTip(btnLimpiar, "LIMPIAR")
 
+    End Sub
 
     Private Sub mstSalon_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ''grid
-        FillDataGridView(dgvSalon, ExecuteQuery("Select * from salon"))
-        ''dgvCarrera.Columns("sucursal_id_sucursal").Visible = False
+        tip()
+        FillDataGridView(dgvSalon, ExecuteQuery(ActualizarGrid))
+        dgvSalon.Columns("Id Salon").Visible = False
+        LimpiarTxtBox(Me)
     End Sub
 
     Private Sub btnAniadir_Click(sender As Object, e As EventArgs) Handles btnAniadir.Click
         LlenarTextBox(True)
         Dim sError As String = SaveData("salon", VectorTxt)
         If (sError = "") Then
-            FillDataGridView(dgvSalon, ExecuteQuery("Select * from salon"))
+            FillDataGridView(dgvSalon, ExecuteQuery(ActualizarGrid))
             LimpiarTxtBox(Me)
         End If
     End Sub
@@ -44,7 +52,7 @@ Public Class mstSalon
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim sError As String = DeleteData("salon", "id_salon = '" & iId & "'")
         If (sError = "") Then
-            FillDataGridView(dgvSalon, ExecuteQuery("Select * from salon"))
+            FillDataGridView(dgvSalon, ExecuteQuery(ActualizarGrid))
             LimpiarTxtBox(Me)
         End If
     End Sub
@@ -53,7 +61,7 @@ Public Class mstSalon
         LlenarTextBox(False)
         Dim sError As String = UpdateData("salon", VectorTxt, "id_salon = '" & iId & "'")
         If (sError = "") Then
-            FillDataGridView(dgvSalon, ExecuteQuery("Select * from salon"))
+            FillDataGridView(dgvSalon, ExecuteQuery(ActualizarGrid))
             LimpiarTxtBox(Me)
         End If
     End Sub
@@ -63,15 +71,11 @@ Public Class mstSalon
     End Sub
 
     Private Sub dgvSalon_SelectionChanged(sender As Object, e As EventArgs) Handles dgvSalon.SelectionChanged
-        iId = GetItem(dgvSalon, "id_salon")
-
-        txtNombre.Text = GetItem(dgvSalon, "nombre")
-        txtDescripcion.Text = GetItem(dgvSalon, "observacion")
-        txtCantidad.Text = GetItem(dgvSalon, "capacidad") ''nombre de la bd
+        iId = GetItem(dgvSalon, "Id Salon")
+        txtNombre.Text = GetItem(dgvSalon, "Nombre")
+        txtDescripcion.Text = GetItem(dgvSalon, "Observacion")
+        txtCantidad.Text = GetItem(dgvSalon, "Capacidad") ''nombre de la bd
        
     End Sub
 
-    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
-
-    End Sub
 End Class

@@ -78,7 +78,8 @@
                         <ul id="menu">
                             
                             <li runat="server" id ="menuActualizacion"><a id="A2" runat="server" href="~/actualizacion.aspx">Actualizar mi Información</a></li> 
-                            <li runat="server" id ="menuVerNotas"><a id="A3" runat="server" href="~/mstConsultaNotas.aspx">Ver notas</a></li>                     
+                            <li runat="server" id ="menuVerNotas"><a id="A3" runat="server" href="~/mstConsultaNotas.aspx">Ver notas</a></li> 
+                            <li runat="server" id ="menuConsultarNotas"><a id="A1" runat="server" href="~/trsConsultaNotasAlumno.aspx">Consultar notas</a></li>                    
                             <li  runat="server" id ="menuOperaciones"><a id="A4" runat="server" href="~/">Operaciones Académicas</a></li> 
                             <li  runat="server" id ="menuContactenos"><a id="A5" runat="server" href="~/">Contactenos</a></li>
                         </ul>

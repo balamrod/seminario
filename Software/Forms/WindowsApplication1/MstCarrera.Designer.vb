@@ -22,14 +22,16 @@ Partial Class MstCarrera
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MstCarrera))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.gbIngresoDatos = New System.Windows.Forms.GroupBox()
-        Me.cbSucursal = New System.Windows.Forms.ComboBox()
-        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.pnlBotones = New System.Windows.Forms.Panel()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnAniadir = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.cbSucursal = New System.Windows.Forms.ComboBox()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtFechaAcuerdo = New System.Windows.Forms.TextBox()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
@@ -41,10 +43,13 @@ Partial Class MstCarrera
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvCarrera = New System.Windows.Forms.DataGridView()
-        Me.pnlBotones = New System.Windows.Forms.Panel()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
         Me.gbIngresoDatos.SuspendLayout()
-        CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBotones.SuspendLayout()
+        CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -79,22 +84,15 @@ Partial Class MstCarrera
         Me.gbIngresoDatos.TabStop = False
         Me.gbIngresoDatos.Text = "Ingreso de datos"
         '
-        'cbSucursal
+        'pnlBotones
         '
-        Me.cbSucursal.FormattingEnabled = True
-        Me.cbSucursal.Location = New System.Drawing.Point(108, 86)
-        Me.cbSucursal.Name = "cbSucursal"
-        Me.cbSucursal.Size = New System.Drawing.Size(121, 21)
-        Me.cbSucursal.TabIndex = 3
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.Location = New System.Drawing.Point(86, 3)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(36, 36)
-        Me.btnModificar.TabIndex = 9
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.pnlBotones.Controls.Add(Me.btnEliminar)
+        Me.pnlBotones.Controls.Add(Me.btnAniadir)
+        Me.pnlBotones.Controls.Add(Me.btnModificar)
+        Me.pnlBotones.Location = New System.Drawing.Point(388, 10)
+        Me.pnlBotones.Name = "pnlBotones"
+        Me.pnlBotones.Size = New System.Drawing.Size(126, 45)
+        Me.pnlBotones.TabIndex = 10
         '
         'btnEliminar
         '
@@ -105,17 +103,6 @@ Partial Class MstCarrera
         Me.btnEliminar.TabIndex = 8
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
-        Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLimpiar.Location = New System.Drawing.Point(21, 19)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(86, 36)
-        Me.btnLimpiar.TabIndex = 7
-        Me.btnLimpiar.Text = "          Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
-        '
         'btnAniadir
         '
         Me.btnAniadir.Image = CType(resources.GetObject("btnAniadir.Image"), System.Drawing.Image)
@@ -124,6 +111,34 @@ Partial Class MstCarrera
         Me.btnAniadir.Size = New System.Drawing.Size(36, 36)
         Me.btnAniadir.TabIndex = 7
         Me.btnAniadir.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
+        Me.btnModificar.Location = New System.Drawing.Point(86, 3)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(36, 36)
+        Me.btnModificar.TabIndex = 9
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'cbSucursal
+        '
+        Me.cbSucursal.FormattingEnabled = True
+        Me.cbSucursal.Location = New System.Drawing.Point(108, 86)
+        Me.cbSucursal.Name = "cbSucursal"
+        Me.cbSucursal.Size = New System.Drawing.Size(121, 21)
+        Me.cbSucursal.TabIndex = 3
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
+        Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLimpiar.Location = New System.Drawing.Point(21, 19)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(48, 41)
+        Me.btnLimpiar.TabIndex = 10
+        Me.btnLimpiar.Text = "      "
+        Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'txtDescripcion
         '
@@ -226,16 +241,6 @@ Partial Class MstCarrera
         Me.dgvCarrera.Size = New System.Drawing.Size(529, 256)
         Me.dgvCarrera.TabIndex = 10
         '
-        'pnlBotones
-        '
-        Me.pnlBotones.Controls.Add(Me.btnEliminar)
-        Me.pnlBotones.Controls.Add(Me.btnAniadir)
-        Me.pnlBotones.Controls.Add(Me.btnModificar)
-        Me.pnlBotones.Location = New System.Drawing.Point(388, 10)
-        Me.pnlBotones.Name = "pnlBotones"
-        Me.pnlBotones.Size = New System.Drawing.Size(126, 45)
-        Me.pnlBotones.TabIndex = 10
-        '
         'MstCarrera
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,11 +250,12 @@ Partial Class MstCarrera
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MstCarrera"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Carrera"
         Me.gbIngresoDatos.ResumeLayout(False)
         Me.gbIngresoDatos.PerformLayout()
-        CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlBotones.ResumeLayout(False)
+        CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -272,5 +278,9 @@ Partial Class MstCarrera
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents pnlBotones As System.Windows.Forms.Panel
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip4 As System.Windows.Forms.ToolTip
 
 End Class
