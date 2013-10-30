@@ -22,6 +22,7 @@ Partial Class TrsSeccion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TrsSeccion))
         Me.dgvCatedras = New System.Windows.Forms.DataGridView()
         Me.bgBusquedaCatedra = New System.Windows.Forms.GroupBox()
@@ -45,6 +46,9 @@ Partial Class TrsSeccion
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.cbAnio = New System.Windows.Forms.ComboBox()
         Me.cbCiclo = New System.Windows.Forms.ComboBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.bgBusquedaCatedra.SuspendLayout()
         Me.gbIngresoDatos.SuspendLayout()
@@ -83,7 +87,7 @@ Partial Class TrsSeccion
         Me.cbJornada.Location = New System.Drawing.Point(291, 19)
         Me.cbJornada.Name = "cbJornada"
         Me.cbJornada.Size = New System.Drawing.Size(99, 21)
-        Me.cbJornada.TabIndex = 11
+        Me.cbJornada.TabIndex = 2
         '
         'cbCarrera
         '
@@ -91,7 +95,7 @@ Partial Class TrsSeccion
         Me.cbCarrera.Location = New System.Drawing.Point(66, 19)
         Me.cbCarrera.Name = "cbCarrera"
         Me.cbCarrera.Size = New System.Drawing.Size(171, 21)
-        Me.cbCarrera.TabIndex = 11
+        Me.cbCarrera.TabIndex = 1
         '
         'Label9
         '
@@ -108,7 +112,7 @@ Partial Class TrsSeccion
         Me.cbPensum.Location = New System.Drawing.Point(451, 19)
         Me.cbPensum.Name = "cbPensum"
         Me.cbPensum.Size = New System.Drawing.Size(92, 21)
-        Me.cbPensum.TabIndex = 10
+        Me.cbPensum.TabIndex = 3
         '
         'Label4
         '
@@ -134,7 +138,7 @@ Partial Class TrsSeccion
         Me.cbCatedra.Location = New System.Drawing.Point(76, 60)
         Me.cbCatedra.Name = "cbCatedra"
         Me.cbCatedra.Size = New System.Drawing.Size(161, 21)
-        Me.cbCatedra.TabIndex = 11
+        Me.cbCatedra.TabIndex = 4
         '
         'Label8
         '
@@ -169,7 +173,7 @@ Partial Class TrsSeccion
         Me.txtNombre.Location = New System.Drawing.Point(398, 61)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(43, 20)
-        Me.txtNombre.TabIndex = 15
+        Me.txtNombre.TabIndex = 6
         Me.txtNombre.Tag = "nombre"
         '
         'Label7
@@ -223,7 +227,7 @@ Partial Class TrsSeccion
         Me.btnEliminar.Location = New System.Drawing.Point(48, 3)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(36, 36)
-        Me.btnEliminar.TabIndex = 8
+        Me.btnEliminar.TabIndex = 9
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnAniadir
@@ -232,7 +236,7 @@ Partial Class TrsSeccion
         Me.btnAniadir.Location = New System.Drawing.Point(6, 3)
         Me.btnAniadir.Name = "btnAniadir"
         Me.btnAniadir.Size = New System.Drawing.Size(36, 36)
-        Me.btnAniadir.TabIndex = 7
+        Me.btnAniadir.TabIndex = 8
         Me.btnAniadir.UseVisualStyleBackColor = True
         '
         'btnModificar
@@ -241,7 +245,7 @@ Partial Class TrsSeccion
         Me.btnModificar.Location = New System.Drawing.Point(90, 3)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(36, 36)
-        Me.btnModificar.TabIndex = 9
+        Me.btnModificar.TabIndex = 10
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'cbAnio
@@ -251,7 +255,7 @@ Partial Class TrsSeccion
         Me.cbAnio.Location = New System.Drawing.Point(270, 60)
         Me.cbAnio.Name = "cbAnio"
         Me.cbAnio.Size = New System.Drawing.Size(54, 21)
-        Me.cbAnio.TabIndex = 11
+        Me.cbAnio.TabIndex = 5
         '
         'cbCiclo
         '
@@ -260,7 +264,7 @@ Partial Class TrsSeccion
         Me.cbCiclo.Location = New System.Drawing.Point(480, 61)
         Me.cbCiclo.Name = "cbCiclo"
         Me.cbCiclo.Size = New System.Drawing.Size(63, 21)
-        Me.cbCiclo.TabIndex = 11
+        Me.cbCiclo.TabIndex = 7
         '
         'TrsSeccion
         '
@@ -272,6 +276,7 @@ Partial Class TrsSeccion
         Me.Controls.Add(Me.gbIngresoDatos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TrsSeccion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "TrsSeccion"
         CType(Me.dgvCatedras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.bgBusquedaCatedra.ResumeLayout(False)
@@ -304,4 +309,7 @@ Partial Class TrsSeccion
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cbAnio As System.Windows.Forms.ComboBox
     Friend WithEvents cbCiclo As System.Windows.Forms.ComboBox
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
 End Class

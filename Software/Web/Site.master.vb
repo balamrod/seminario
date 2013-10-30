@@ -52,6 +52,7 @@ Partial Class SiteMaster
             menuContactenos.Visible = False
             menuOperaciones.Visible = False
             menuVerNotas.Visible = False
+            menuConsultarNotas.Visible = False
         End If
 
     End Sub

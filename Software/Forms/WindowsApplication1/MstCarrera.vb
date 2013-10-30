@@ -7,7 +7,7 @@ Public Class MstCarrera
 
 #Region "variables"
     Dim VectorTxt(5) As TextBox
-    Dim sActualizarGrid As String = "select id_carrera as 'código', c.nombre, descripcion, s.nombre as sucursal , c.acuerdo, c.fecha_acuerdo as 'fecha acuerdo', sucursal_id_sucursal from carrera c inner join sucursal s on c.sucursal_id_sucursal = s.id_sucursal order by sucursal, c.nombre"
+    Dim sActualizarGrid As String = "select id_carrera as 'codigo', c.nombre, descripcion, s.nombre as sucursal , c.acuerdo, c.fecha_acuerdo as 'fecha acuerdo', sucursal_id_sucursal from carrera c inner join sucursal s on c.sucursal_id_sucursal = s.id_sucursal order by sucursal, c.nombre"
 
     Dim iId As String
 #End Region
@@ -26,6 +26,13 @@ Public Class MstCarrera
   
     End Sub
 
+    Sub tip()
+        ToolTip1.SetToolTip(btnAniadir, "GUARDAR")
+        ToolTip2.SetToolTip(btnEliminar, "BORRAR")
+        ToolTip3.SetToolTip(btnModificar, "MODIFICAR")
+        ToolTip4.SetToolTip(btnLimpiar, "LIMPIAR")
+
+    End Sub
     ''' <summary>
     ''' bRodriguez
     ''' 13/10/2013
@@ -34,6 +41,8 @@ Public Class MstCarrera
     Private Sub MstCarrera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim DsComboSucursal As DataSet = ExecuteQuery("select id_sucursal as id, nombre from sucursal")
         FillComboBox(cbSucursal, DsComboSucursal, "id", "nombre")
+
+        tip()
 
         FillDataGridView(dgvCarrera, ExecuteQuery(sActualizarGrid))
         ''dgvCarrera.Columns("sucursal_id_sucursal").Visible = False
@@ -86,7 +95,7 @@ Public Class MstCarrera
     ''' Obtiene los valores del dgvCarrera y los muestra en sus respectivos campos en la forma
     ''' </summary>
     Private Sub dgvCarrera_SelectionChanged(sender As Object, e As EventArgs) Handles dgvCarrera.SelectionChanged
-        iId = GetItem(dgvCarrera, "código")
+        iId = GetItem(dgvCarrera, "codigo")
         txtCodigo.Text = iId
         txtNombre.Text = GetItem(dgvCarrera, "nombre")
         txtDescripcion.Text = GetItem(dgvCarrera, "descripcion")
@@ -110,4 +119,7 @@ Public Class MstCarrera
     End Sub
 
    
+    Private Sub dgvCarrera_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCarrera.CellContentClick
+
+    End Sub
 End Class

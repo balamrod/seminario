@@ -46,13 +46,9 @@ Partial Class Maestro
         Me.PorCatedraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VisualizacionDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdminisrtracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevaCarreraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoPensumToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevaSecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoHorarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoSalónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoCicloToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoEmpleadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsignacionCatedraticoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SeccionToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoCatedraticoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContabilidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaSaldosAlumnoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -77,10 +73,11 @@ Partial Class Maestro
         Me.CarreraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PensumToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SeccionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GradoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HorarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GradoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatedraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CicloToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HorarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GradoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GradoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SeguridadToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -218,52 +215,28 @@ Partial Class Maestro
         '
         'AdminisrtracionToolStripMenuItem
         '
-        Me.AdminisrtracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaCarreraToolStripMenuItem, Me.NuevoPensumToolStripMenuItem, Me.NuevaSecciónToolStripMenuItem, Me.NuevoHorarioToolStripMenuItem, Me.NuevoSalónToolStripMenuItem, Me.NuevoCicloToolStripMenuItem, Me.NuevoEmpleadoToolStripMenuItem})
+        Me.AdminisrtracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsignacionCatedraticoToolStripMenuItem, Me.SeccionToolStripMenuItem2, Me.NuevoCatedraticoToolStripMenuItem})
         Me.AdminisrtracionToolStripMenuItem.Name = "AdminisrtracionToolStripMenuItem"
         Me.AdminisrtracionToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
         Me.AdminisrtracionToolStripMenuItem.Text = "Administración"
         '
-        'NuevaCarreraToolStripMenuItem
+        'AsignacionCatedraticoToolStripMenuItem
         '
-        Me.NuevaCarreraToolStripMenuItem.Name = "NuevaCarreraToolStripMenuItem"
-        Me.NuevaCarreraToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.NuevaCarreraToolStripMenuItem.Text = "Nueva Carrera"
+        Me.AsignacionCatedraticoToolStripMenuItem.Name = "AsignacionCatedraticoToolStripMenuItem"
+        Me.AsignacionCatedraticoToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.AsignacionCatedraticoToolStripMenuItem.Text = "Asignacion Catedratico"
         '
-        'NuevoPensumToolStripMenuItem
+        'SeccionToolStripMenuItem2
         '
-        Me.NuevoPensumToolStripMenuItem.Name = "NuevoPensumToolStripMenuItem"
-        Me.NuevoPensumToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.NuevoPensumToolStripMenuItem.Text = "Nuevo Pensum"
+        Me.SeccionToolStripMenuItem2.Name = "SeccionToolStripMenuItem2"
+        Me.SeccionToolStripMenuItem2.Size = New System.Drawing.Size(197, 22)
+        Me.SeccionToolStripMenuItem2.Text = "Nueva Seccion"
         '
-        'NuevaSecciónToolStripMenuItem
+        'NuevoCatedraticoToolStripMenuItem
         '
-        Me.NuevaSecciónToolStripMenuItem.Name = "NuevaSecciónToolStripMenuItem"
-        Me.NuevaSecciónToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.NuevaSecciónToolStripMenuItem.Text = "Nueva Sección"
-        '
-        'NuevoHorarioToolStripMenuItem
-        '
-        Me.NuevoHorarioToolStripMenuItem.Name = "NuevoHorarioToolStripMenuItem"
-        Me.NuevoHorarioToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.NuevoHorarioToolStripMenuItem.Text = "Nuevo Horario"
-        '
-        'NuevoSalónToolStripMenuItem
-        '
-        Me.NuevoSalónToolStripMenuItem.Name = "NuevoSalónToolStripMenuItem"
-        Me.NuevoSalónToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.NuevoSalónToolStripMenuItem.Text = "Nuevo Salón"
-        '
-        'NuevoCicloToolStripMenuItem
-        '
-        Me.NuevoCicloToolStripMenuItem.Name = "NuevoCicloToolStripMenuItem"
-        Me.NuevoCicloToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.NuevoCicloToolStripMenuItem.Text = "Nuevo Ciclo"
-        '
-        'NuevoEmpleadoToolStripMenuItem
-        '
-        Me.NuevoEmpleadoToolStripMenuItem.Name = "NuevoEmpleadoToolStripMenuItem"
-        Me.NuevoEmpleadoToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.NuevoEmpleadoToolStripMenuItem.Text = "Nuevo Empleado"
+        Me.NuevoCatedraticoToolStripMenuItem.Name = "NuevoCatedraticoToolStripMenuItem"
+        Me.NuevoCatedraticoToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.NuevoCatedraticoToolStripMenuItem.Text = "Nuevo Catedratico"
         '
         'ContabilidadToolStripMenuItem
         '
@@ -393,7 +366,7 @@ Partial Class Maestro
         '
         'PapeleriaToolStripMenuItem
         '
-        Me.PapeleriaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CarreraToolStripMenuItem, Me.PensumToolStripMenuItem, Me.SeccionToolStripMenuItem, Me.GradoToolStripMenuItem1, Me.CatedraToolStripMenuItem, Me.CicloToolStripMenuItem, Me.HorarioToolStripMenuItem})
+        Me.PapeleriaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CarreraToolStripMenuItem, Me.PensumToolStripMenuItem, Me.SeccionToolStripMenuItem, Me.HorarioToolStripMenuItem, Me.GradoToolStripMenuItem2, Me.CatedraToolStripMenuItem, Me.CicloToolStripMenuItem, Me.GradoToolStripMenuItem1})
         Me.PapeleriaToolStripMenuItem.Name = "PapeleriaToolStripMenuItem"
         Me.PapeleriaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.PapeleriaToolStripMenuItem.Text = "Administración"
@@ -416,11 +389,17 @@ Partial Class Maestro
         Me.SeccionToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.SeccionToolStripMenuItem.Text = "Seccion"
         '
-        'GradoToolStripMenuItem1
+        'HorarioToolStripMenuItem
         '
-        Me.GradoToolStripMenuItem1.Name = "GradoToolStripMenuItem1"
-        Me.GradoToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
-        Me.GradoToolStripMenuItem1.Text = "Grado"
+        Me.HorarioToolStripMenuItem.Name = "HorarioToolStripMenuItem"
+        Me.HorarioToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.HorarioToolStripMenuItem.Text = "Horario"
+        '
+        'GradoToolStripMenuItem2
+        '
+        Me.GradoToolStripMenuItem2.Name = "GradoToolStripMenuItem2"
+        Me.GradoToolStripMenuItem2.Size = New System.Drawing.Size(117, 22)
+        Me.GradoToolStripMenuItem2.Text = "Salon"
         '
         'CatedraToolStripMenuItem
         '
@@ -434,11 +413,11 @@ Partial Class Maestro
         Me.CicloToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.CicloToolStripMenuItem.Text = "Ciclo"
         '
-        'HorarioToolStripMenuItem
+        'GradoToolStripMenuItem1
         '
-        Me.HorarioToolStripMenuItem.Name = "HorarioToolStripMenuItem"
-        Me.HorarioToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.HorarioToolStripMenuItem.Text = "Horario"
+        Me.GradoToolStripMenuItem1.Name = "GradoToolStripMenuItem1"
+        Me.GradoToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
+        Me.GradoToolStripMenuItem1.Text = "Grado"
         '
         'GradoToolStripMenuItem
         '
@@ -494,6 +473,7 @@ Partial Class Maestro
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Name = "Maestro"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sistema de Gestión Académica"
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
@@ -524,13 +504,6 @@ Partial Class Maestro
     Friend WithEvents PorCatedraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VisualizacionDeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdminisrtracionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NuevaCarreraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NuevoPensumToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NuevaSecciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NuevoHorarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NuevoSalónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NuevoCicloToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NuevoEmpleadoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ContabilidadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NuevoPagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultaSaldosAlumnoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -553,9 +526,6 @@ Partial Class Maestro
     Friend WithEvents InscripciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PapeleriaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SeccionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GradoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CatedraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CicloToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PensumToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HorarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GradoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -566,5 +536,12 @@ Partial Class Maestro
     Friend WithEvents PrivilegioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FormaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CarreraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GradoToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CatedraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CicloToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GradoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AsignacionCatedraticoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SeccionToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NuevoCatedraticoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

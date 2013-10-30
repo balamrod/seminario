@@ -50,7 +50,15 @@ Partial Class inicio
         Master.FindControl("menuActualizacion").Visible = True
         Master.FindControl("menuOperaciones").Visible = True
         Master.FindControl("menuContactenos").Visible = True
-        Master.FindControl("menuVerNotas").Visible = True
+        If esAlumno = "1" Then
+            Master.FindControl("menuVerNotas").Visible = False
+            Master.FindControl("menuConsultarNotas").Visible = True
+        Else
+            Master.FindControl("menuVerNotas").Visible = True
+            Master.FindControl("menuConsultarNotas").Visible = False
+
+        End If
         usuarioEstaOnline = True
+        Response.Redirect("~/actualizacion.aspx")
     End Sub
 End Class

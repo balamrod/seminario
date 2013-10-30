@@ -5,33 +5,34 @@ Imports WindowsApplication1.clsGlobales
 
 Public Class mstAlumno
 #Region "variables"
-    Dim VectorTxt(9) As TextBox
-    Dim sActualizarGrid As String = "select id_carrera as 'código', c.nombre, descripcion, s.nombre as sucursal , c.acuerdo, c.fecha_acuerdo as 'fecha acuerdo', sucursal_id_sucursal from carrera c inner join sucursal s on c.sucursal_id_sucursal = s.id_sucursal order by sucursal, c.nombre"
+    Dim VectorTxt(13) As TextBox
+    Dim sActualizarGrid As String = "select anio_carnet as 'Anio Carnet', correlativo_carnet as 'Correlativo Carnet', id_carrera as 'Id Carrera', direccion as 'Direccion', sexo as 'Sexo', nombres as 'Nombres', apellidos as 'Apellidos', correo as 'Email', telefono_casa as 'Telefono', celular as 'Celular', fecha_nac as 'Fecha Nacimiento', dpi as 'DPI', colegio_egresado as 'Colegio Egresado', carrera_egresado as 'Carrera Egresado', usuario_id_usuario as 'Id Usuario' from alumno"
 
     Dim iId As String
 #End Region
 
-    Private Sub LlenarTextBox()
+    Private Sub LlenarTextBox(incluirID As Boolean)
         VectorTxt(0) = txtNombres
         VectorTxt(1) = txtApellidos
         VectorTxt(2) = txtSexo
+
         VectorTxt(3) = txtFechaNacimiento
         VectorTxt(3).Text = FormatearFechaMysql(txtFechaNacimiento.Text)
+
         VectorTxt(4) = TxtCorreo
         VectorTxt(5) = txtDpi
         VectorTxt(6) = txtTelefono
         VectorTxt(7) = txtCelular
-        VectorTxt(8) = txtColegioEgresado
-        VectorTxt(9) = txtCarreraEgresado
+        VectorTxt(8) = txtAnio
+        VectorTxt(9) = txtCorrelativo
+        VectorTxt(10) = txtColegioEgresado
+        VectorTxt(11) = txtCarreraEgresado
 
+        VectorTxt(12) = New TextBox
+        VectorTxt(12).Tag = "id_carrera"
+        VectorTxt(12).Text = cbxCarrera.SelectedValue()
 
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+        VectorTxt(13) = txtDireccion
 
     End Sub
 
@@ -40,7 +41,7 @@ Public Class mstAlumno
     End Sub
 
     Private Sub btnAniadir_Click(sender As Object, e As EventArgs) Handles btnAniadir.Click
-        LlenarTextBox()
+        LlenarTextBox(True)
         Dim sError As String = SaveData("alumno", VectorTxt)
         If (sError = "") Then
             FillDataGridView(dgvAlumno, ExecuteQuery(sActualizarGrid))
@@ -49,13 +50,53 @@ Public Class mstAlumno
     End Sub
 
     Private Sub mstAlumno_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim DsComboSucursal As DataSet = ExecuteQuery("select id_carrera as id, nombre from carrera")
+        FillComboBox(cbxCarrera, DsComboSucursal, "id", "nombre")
+
+        tip()
 
         FillDataGridView(dgvAlumno, ExecuteQuery(sActualizarGrid))
+        dgvAlumno.Columns("Id Carrera").Visible = False
+        dgvAlumno.Columns("Id Usuario").Visible = False
         LimpiarTxtBox(Me)
+    End Sub
+    Sub tip()
+        ToolTip1.SetToolTip(btnAniadir, "GUARDAR")
+        ToolTip2.SetToolTip(btnEliminar, "ELIMINAR")
+        ToolTip3.SetToolTip(btnModificar, "MODIFICAR")
+        ToolTip4.SetToolTip(btnLimpiar, "LIMPIAR")
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim sError As String = DeleteData("alumno", "id_alumno = " & iId)
+        Dim sError As String = DeleteData("alumno", "id_carrera = '" & iId & "'")
+        If (sError = "") Then
+            FillDataGridView(dgvAlumno, ExecuteQuery(sActualizarGrid))
+            LimpiarTxtBox(Me)
+        End If
+    End Sub
+
+    Private Sub dgvAlumno_SelectionChanged(sender As Object, e As EventArgs) Handles dgvAlumno.SelectionChanged
+        iId = GetItem(dgvAlumno, "Id_carrera")
+        txtNombres.Text = GetItem(dgvAlumno, "Nombres")
+        txtApellidos.Text = GetItem(dgvAlumno, "Apellidos")
+        txtSexo.Text = GetItem(dgvAlumno, "Sexo")
+        txtFechaNacimiento.Text = GetItem(dgvAlumno, "Fecha Nacimiento")
+        TxtCorreo.Text = GetItem(dgvAlumno, "Email")
+        txtDpi.Text = GetItem(dgvAlumno, "DPI")
+        txtTelefono.Text = GetItem(dgvAlumno, "Telefono")
+        txtCelular.Text = GetItem(dgvAlumno, "Celular")
+        txtDireccion.Text = GetItem(dgvAlumno, "Direccion")
+        txtAnio.Text = GetItem(dgvAlumno, "Anio Carnet")
+        txtCorrelativo.Text = GetItem(dgvAlumno, "Correlativo Carnet")
+        txtColegioEgresado.Text = GetItem(dgvAlumno, "Colegio Egresado")
+        txtCarreraEgresado.Text = GetItem(dgvAlumno, "Carrera Egresado")
+        cbxCarrera.SelectedValue = GetItem(dgvAlumno, "Id Carrera")
+
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        LlenarTextBox(False)
+        Dim sError As String = UpdateData("alumno", VectorTxt, "id_carrera = '" & iId & "'")
         If (sError = "") Then
             FillDataGridView(dgvAlumno, ExecuteQuery(sActualizarGrid))
             LimpiarTxtBox(Me)
@@ -63,25 +104,6 @@ Public Class mstAlumno
     End Sub
 
     Private Sub dgvAlumno_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAlumno.CellContentClick
-
-    End Sub
-
-    Private Sub dgvAlumno_SelectionChanged(sender As Object, e As EventArgs) Handles dgvAlumno.SelectionChanged
-        iId = GetItem(dgvAlumno, "Nombres")
-
-        ''txtCodigo.Text = iId
-        ''where anio carnet - txtr anio carrera = combo and correlato = tecbox
-        txtNombres.Text = GetItem(dgvAlumno, "nombres")
-        txtApellidos.Text = GetItem(dgvAlumno, "apellidos")
-        txtSexo.Text = GetItem(dgvAlumno, "sexo")
-        txtFechaNacimiento.Text = GetItem(dgvAlumno, "fecha_nac")
-        TxtCorreo.Text = GetItem(dgvAlumno, "correo")
-        txtDpi.Text = GetItem(dgvAlumno, "dpi")
-        txtTelefono.Text = GetItem(dgvAlumno, "telefono")
-        txtCelular.Text = GetItem(dgvAlumno, "celular")
-        txtColegioEgresado.Text = GetItem(dgvAlumno, "colegio_egresado")
-        txtCarreraEgresado.Text = GetItem(dgvAlumno, "carrera_egresado")
-
 
     End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class TrsInscripcion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TrsInscripcion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cbCiclo = New System.Windows.Forms.ComboBox()
@@ -47,6 +48,10 @@ Partial Class TrsInscripcion
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnAsignar = New System.Windows.Forms.Button()
         Me.lblError = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dvgHistorialInscripciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,7 +91,7 @@ Partial Class TrsInscripcion
         Me.cbCiclo.Location = New System.Drawing.Point(359, 50)
         Me.cbCiclo.Name = "cbCiclo"
         Me.cbCiclo.Size = New System.Drawing.Size(97, 21)
-        Me.cbCiclo.TabIndex = 9
+        Me.cbCiclo.TabIndex = 7
         Me.cbCiclo.Tag = ""
         '
         'btnBuscar
@@ -95,7 +100,7 @@ Partial Class TrsInscripcion
         Me.btnBuscar.Location = New System.Drawing.Point(576, 21)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(25, 26)
-        Me.btnBuscar.TabIndex = 6
+        Me.btnBuscar.TabIndex = 11
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'btnAniadir
@@ -104,7 +109,7 @@ Partial Class TrsInscripcion
         Me.btnAniadir.Location = New System.Drawing.Point(544, 21)
         Me.btnAniadir.Name = "btnAniadir"
         Me.btnAniadir.Size = New System.Drawing.Size(25, 26)
-        Me.btnAniadir.TabIndex = 5
+        Me.btnAniadir.TabIndex = 10
         Me.btnAniadir.UseVisualStyleBackColor = True
         '
         'txtDescripcion
@@ -113,7 +118,7 @@ Partial Class TrsInscripcion
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(490, 43)
-        Me.txtDescripcion.TabIndex = 11
+        Me.txtDescripcion.TabIndex = 9
         Me.txtDescripcion.Tag = "observaciones"
         '
         'txtContrato
@@ -122,7 +127,7 @@ Partial Class TrsInscripcion
         Me.txtContrato.Location = New System.Drawing.Point(515, 51)
         Me.txtContrato.Name = "txtContrato"
         Me.txtContrato.Size = New System.Drawing.Size(86, 20)
-        Me.txtContrato.TabIndex = 10
+        Me.txtContrato.TabIndex = 8
         Me.txtContrato.Tag = "no_contrato_est"
         '
         'txtFecha
@@ -131,7 +136,7 @@ Partial Class TrsInscripcion
         Me.txtFecha.Location = New System.Drawing.Point(232, 51)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.Size = New System.Drawing.Size(82, 20)
-        Me.txtFecha.TabIndex = 8
+        Me.txtFecha.TabIndex = 6
         Me.txtFecha.Tag = "fecha"
         '
         'txtMatricula
@@ -140,7 +145,7 @@ Partial Class TrsInscripcion
         Me.txtMatricula.Location = New System.Drawing.Point(111, 51)
         Me.txtMatricula.Name = "txtMatricula"
         Me.txtMatricula.Size = New System.Drawing.Size(69, 20)
-        Me.txtMatricula.TabIndex = 7
+        Me.txtMatricula.TabIndex = 5
         Me.txtMatricula.Tag = "matricula"
         '
         'txtNombre
@@ -263,22 +268,20 @@ Partial Class TrsInscripcion
         '
         Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGuardar.Location = New System.Drawing.Point(443, 313)
+        Me.btnGuardar.Location = New System.Drawing.Point(521, 314)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(82, 40)
+        Me.btnGuardar.Size = New System.Drawing.Size(45, 40)
         Me.btnGuardar.TabIndex = 3
-        Me.btnGuardar.Text = "         Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'btnAsignar
         '
         Me.btnAsignar.Image = CType(resources.GetObject("btnAsignar.Image"), System.Drawing.Image)
         Me.btnAsignar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAsignar.Location = New System.Drawing.Point(531, 314)
+        Me.btnAsignar.Location = New System.Drawing.Point(572, 313)
         Me.btnAsignar.Name = "btnAsignar"
-        Me.btnAsignar.Size = New System.Drawing.Size(82, 40)
+        Me.btnAsignar.Size = New System.Drawing.Size(41, 40)
         Me.btnAsignar.TabIndex = 3
-        Me.btnAsignar.Text = "          Asignar"
         Me.btnAsignar.UseVisualStyleBackColor = True
         '
         'lblError
@@ -302,6 +305,7 @@ Partial Class TrsInscripcion
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TrsInscripcion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inscripcion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -335,4 +339,8 @@ Partial Class TrsInscripcion
     Friend WithEvents lblError As System.Windows.Forms.Label
     Friend WithEvents cbCiclo As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolTip4 As System.Windows.Forms.ToolTip
 End Class

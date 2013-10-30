@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1D00C7D0-D42D-49A6-97D8-1791945C25E4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>WindowsApplication1.TrsInscripcion</StartupObject>
+    <StartupObject>WindowsApplication1.login</StartupObject>
     <RootNamespace>WindowsApplication1</RootNamespace>
     <AssemblyName>WindowsApplication1</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -82,34 +82,52 @@
     <Compile Include="Clases\clsHelper.vb" />
     <Compile Include="Clases\clsABC.vb" />
     <Compile Include="Clases\clsHelperSQL.vb" />
-    <Compile Include="mstHorario.Designer.vb">
-      <DependentUpon>mstHorario.vb</DependentUpon>
+    <Compile Include="login.designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
     </Compile>
-    <Compile Include="mstHorario.vb">
+    <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mstAlumno.Designer.vb">
+    <Compile Include="mstAlumno.designer.vb">
       <DependentUpon>mstAlumno.vb</DependentUpon>
     </Compile>
     <Compile Include="mstAlumno.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MstAsignacion.Designer.vb">
-      <DependentUpon>MstAsignacion.vb</DependentUpon>
+    <Compile Include="mstBusquedaAlumno.designer.vb">
+      <DependentUpon>mstBusquedaAlumno.vb</DependentUpon>
     </Compile>
-    <Compile Include="MstAsignacion.vb">
+    <Compile Include="mstBusquedaAlumno.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mstSalon.Designer.vb">
+    <Compile Include="mstCatedratico1.designer.vb">
+      <DependentUpon>mstCatedratico1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mstCatedratico1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mstHorario.designer.vb">
+      <DependentUpon>mstHorario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mstHorario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MstPensum.designer.vb">
+      <DependentUpon>MstPensum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MstPensum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mstSalon.designer.vb">
       <DependentUpon>mstSalon.vb</DependentUpon>
     </Compile>
     <Compile Include="mstSalon.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mstSeccion.Designer.vb">
-      <DependentUpon>mstSeccion.vb</DependentUpon>
+    <Compile Include="MstSeccion.designer.vb">
+      <DependentUpon>MstSeccion.vb</DependentUpon>
     </Compile>
-    <Compile Include="mstSeccion.vb">
+    <Compile Include="MstSeccion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TrsAsignacion.Designer.vb">
@@ -123,12 +141,6 @@
       <DependentUpon>TrsInscripcion.vb</DependentUpon>
     </Compile>
     <Compile Include="TrsInscripcion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="login.Designer.vb">
-      <DependentUpon>login.vb</DependentUpon>
-    </Compile>
-    <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MstCarrera.vb">
@@ -159,12 +171,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="MstPensum.Designer.vb">
-      <DependentUpon>MstPensum.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MstPensum.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="TrsAsignacionCatedratico.Designer.vb">
       <DependentUpon>TrsAsignacionCatedratico.vb</DependentUpon>
     </Compile>
@@ -179,17 +185,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mstAlumno.resx">
       <DependentUpon>mstAlumno.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MstAsignacion.resx">
-      <DependentUpon>MstAsignacion.vb</DependentUpon>
+    <EmbeddedResource Include="mstBusquedaAlumno.resx">
+      <DependentUpon>mstBusquedaAlumno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mstCatedratico1.resx">
+      <DependentUpon>mstCatedratico1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mstHorario.resx">
       <DependentUpon>mstHorario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MstPensum.resx">
+      <DependentUpon>MstPensum.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mstSalon.resx">
       <DependentUpon>mstSalon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MstSeccion.resx">
+      <DependentUpon>MstSeccion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrsAsignacion.resx">
       <DependentUpon>TrsAsignacion.vb</DependentUpon>
@@ -197,17 +215,11 @@
     <EmbeddedResource Include="TrsInscripcion.resx">
       <DependentUpon>TrsInscripcion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Maestro.resx">
       <DependentUpon>Maestro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MstCarrera.resx">
       <DependentUpon>MstCarrera.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MstPensum.resx">
-      <DependentUpon>MstPensum.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -233,6 +245,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\Ok-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
